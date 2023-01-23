@@ -1,7 +1,5 @@
-import Box from "@mui/material/Box";
-
-import { FunctionComponent, JSXElementConstructor, ReactElement } from "react";
-import TopNavBar from "../../molecules/TopNavBar/TopNavBar";
+import { Fragment, FunctionComponent, JSXElementConstructor, ReactElement } from "react";
+import TopNavBar from "@components/molecules/TopNavBar/TopNavBar";
 
 interface MainLayoutProps {
   children?: ReactElement<any, string | JSXElementConstructor<any>>;
@@ -9,10 +7,10 @@ interface MainLayoutProps {
 
 const MainLayout: FunctionComponent<MainLayoutProps> = ({ children }) => {
   return (
-    <>
+    <Fragment>
       <TopNavBar />
-      <Box> {children}</Box>
-    </>
+      {children}
+    </Fragment>
   );
 }; //Closes MainLayout component
 

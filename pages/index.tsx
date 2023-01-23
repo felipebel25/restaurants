@@ -1,12 +1,16 @@
-
-import Typography from "@mui/material/Typography";
-import { ReactElement } from "react";
-import MainLayout from "../components/templates/MainLayout/MainLayout";
+import { Fragment, ReactElement } from "react";
+import MainLayout from "@components/templates/MainLayout/MainLayout";
 import { NextPageWithLayout } from "./_app";
+import { HomeContent } from "@components/organisms/Home/Home";
+
 
 const Home: NextPageWithLayout = () => {
 
-  return <Typography variant="h1">HOME</Typography>
+  return (
+    <Fragment >
+      <HomeContent/>
+    </Fragment>
+  )
 
 }//Closes Home page
 
