@@ -72,7 +72,7 @@ export const ButtonsCategories = ({ titleSection }: ButtonsCategoriesProps) => {
               type="submit"
               variant="contained"
             >
-              Know more
+              Know More
             </Button>
           </Box>
         </Box>

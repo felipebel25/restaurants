@@ -15,7 +15,9 @@
     height: "5rem",
     borderRadius: "8px",
     backgroundColor: "#ffff",
-    boxShadow: "0px 11px 17px 7px #F3F4F60"
+    boxShadow: "0px 11px 17px 7px #F3F4F60",
+    textTransform:"none",
+    fill:"#EC6533"
   },
 
   btn_icons: {

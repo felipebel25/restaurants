@@ -56,6 +56,7 @@ const STYLE = {
     margin: "auto",
     width: "15rem",
     fontWeight: 600,
+    textTransform: "none",
   },
 
   btn_category: {
@@ -64,13 +65,16 @@ const STYLE = {
     color: "#6B7280",
     fontWeight: 700,
     height: "4rem",
-    boxShadow:"0px 11px 17px 7px #F3F4F6"
+    boxShadow:"0px 11px 17px 7px #F3F4F6",
+    textTransform: "none",
+
   },
   btn_category_active: {
     fontSize:"1.3rem",
     height: "4rem",
     fontWeight: 700,
-    boxShadow:"0px 11px 17px 7px #F3F4F6"
+    boxShadow:"0px 11px 17px 7px #F3F4F6",
+    textTransform: "none",
   },
 
   btn_icon: {
