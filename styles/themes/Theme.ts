@@ -36,6 +36,16 @@ const MainTheme = createTheme({
 	typography: Typography,
 	palette: Pallete,
 	components: {
+		MuiInputBase: {
+			styleOverrides: {
+				root: {
+					[`& fieldset`]: {
+						borderRadius: 8,
+					},
+				},
+			},
+		},
+
 		MuiButton: {
 			variants: [
 				{
