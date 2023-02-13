@@ -23,6 +23,7 @@ import PersonalInformationSection from "./sections/personal-information";
 import RestaurantInfoSection from "./sections/restaurant-info";
 import TaxationInformation from "./sections/tax-information";
 import TermsConditionsSection from "./sections/terms-information";
+import PlanSelectionSection from "./sections/plan-selection";
 
 interface WizardStepType {
 	title: string;
@@ -42,7 +43,7 @@ const CompleteInformationPage: FunctionComponent<
 		{
 			title: "Select your",
 			label: "PLAN SELECTION",
-			component: <>WIP</>,
+			component: <PlanSelectionSection />,
 		},
 		{
 			title: "Select your",
@@ -94,7 +95,7 @@ const CompleteInformationPage: FunctionComponent<
 			alignItems={"center"}
 			flexDirection={"column"}
 			gap={6}
-			sx={{ minHeight: "100vh" }}
+			sx={{ minHeight: "100vh", paddingBottom: 5 }}
 		>
 			<Box py={1.5}>
 				<Typography

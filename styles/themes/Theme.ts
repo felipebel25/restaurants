@@ -1,9 +1,26 @@
 import "@fontsource/inter";
 import "@fontsource/poppins";
 import { createTheme, PaletteOptions } from "@mui/material";
-import { TypographyOptions } from "@mui/material/styles/createTypography";
 
-const Typography: TypographyOptions = {
+declare module "@mui/material/styles" {
+	interface Palette {
+		white: Palette["primary"];
+	}
+
+	// allow configuration using `createTheme`
+	interface PaletteOptions {
+		white?: PaletteOptions["primary"];
+	}
+}
+
+// Update the Button's color prop options
+declare module "@mui/material/Button" {
+	export interface ButtonPropsColorOverrides {
+		white: true;
+	}
+}
+
+const Typography = {
 	fontFamily: ["poppins"].join(","),
 	h2: { fontWeight: 700, fontSize: 48 },
 	h5: { fontWeight: 600, fontSize: 24 },
@@ -19,17 +36,22 @@ const Typography: TypographyOptions = {
 
 const Pallete: PaletteOptions = {
 	mode: "light",
+	white: { main: "#FFFFFF" },
+
 	primary: {
 		main: "#EC6533",
-		light: "#EC6533",
-		dark: "#111827",
+		light: "#F0845C",
+		dark: "#D75C2E",
+		contrastText: "white",
 	},
 	secondary: {
-		main: "#ffffff",
+		main: "#1F2937",
 		light: "111827",
-		dark: "#EC6533",
-		contrastText: "#EC6533",
+		dark: "#090E18",
+		contrastText: "white",
 	},
+
+	contrastThreshold: 4.5,
 }; //Closes Pallete config
 
 const MainTheme = createTheme({
