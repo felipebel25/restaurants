@@ -24,6 +24,7 @@ import RestaurantInfoSection from "./sections/restaurant-info";
 import TaxationInformation from "./sections/tax-information";
 import TermsConditionsSection from "./sections/terms-information";
 import PlanSelectionSection from "./sections/plan-selection";
+import DeviceSelectionPage from "./sections/devices-selection";
 
 interface WizardStepType {
 	title: string;
@@ -48,7 +49,7 @@ const CompleteInformationPage: FunctionComponent<
 		{
 			title: "Select your",
 			label: "DEVICE REQUEST",
-			component: <>WIP</>,
+			component: <DeviceSelectionPage />,
 		},
 		{
 			title: "Select your",
