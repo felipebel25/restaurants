@@ -8,7 +8,7 @@ import {
 	Typography,
 } from "@mui/material";
 import { FunctionComponent, useState } from "react";
-import { DeviceProps } from "./DeviceTypes";
+import { DeviceProps } from "../../../types/DeviceTypes";
 import TextField from "@mui/material/TextField";
 
 interface DeviceCardProps {

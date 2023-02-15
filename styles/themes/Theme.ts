@@ -67,7 +67,21 @@ const MainTheme = createTheme({
 				},
 			},
 		},
+		MuiDialog: {
+			styleOverrides: {
+				paper: {
+					borderRadius: 12,
+				},
+			},
+		},
 
+		MuiCard: {
+			styleOverrides: {
+				root: {
+					borderRadius: 12,
+				},
+			},
+		},
 		MuiButton: {
 			variants: [
 				{

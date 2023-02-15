@@ -20,10 +20,12 @@ const PersonalInformationSection: FunctionComponent<
 				required={true}
 			></TextField>
 			<TextField
+				type={"email"}
 				label={"Email"}
 				required={true}
 			></TextField>
 			<TextField
+				type={"tel"}
 				label={"Phone"}
 				required={true}
 			></TextField>

@@ -1,20 +1,13 @@
 import React, { FunctionComponent, useState } from "react";
-import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
+
 import {
 	Button,
 	Card,
-	Checkbox,
-	FormControl,
-	FormControlLabel,
-	InputLabel,
-	MenuItem,
-	Select,
 	Stack,
 	Step,
 	StepLabel,
 	Stepper,
-	TextField,
 	Typography,
 } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
@@ -25,6 +18,7 @@ import TaxationInformation from "./sections/tax-information";
 import TermsConditionsSection from "./sections/terms-information";
 import PlanSelectionSection from "./sections/plan-selection";
 import DeviceSelectionPage from "./sections/devices-selection";
+import PaymentMethodSelection from "@components/organisms/PaymentMethodSelection/PaymentMethodSelection";
 
 interface WizardStepType {
 	title: string;
@@ -54,7 +48,7 @@ const CompleteInformationPage: FunctionComponent<
 		{
 			title: "Select your",
 			label: "PAYMENT INFO",
-			component: <>WIP</>,
+			component: <PaymentMethodSelection />,
 		},
 		{
 			title: "Complete your",
@@ -102,6 +96,7 @@ const CompleteInformationPage: FunctionComponent<
 				<Typography
 					variant="h6"
 					noWrap={true}
+					sx={{ opacity: 0.5 }}
 				>
 					<strong>
 						VALUE • VALUE • VALUE • VALUE • VALUE • VALUE • VALUE • VALUE •

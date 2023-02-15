@@ -31,7 +31,7 @@ const TaxationInformation: FunctionComponent<TaxationInformationProps> = () => {
 			/>
 
 			<Button
-				color="primary"
+				color="secondary"
 				variant="contained"
 				size="small"
 			>
