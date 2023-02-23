@@ -36,6 +36,11 @@ const CompleteInformationPage: FunctionComponent<
 
 	const steps: Array<WizardStepType> = [
 		{
+			title: "Accept the",
+			label: "Terms and Conditions",
+			component: <TermsConditionsSection />,
+		},
+		{
 			title: "Select your",
 			label: "PLAN SELECTION",
 			component: <PlanSelectionSection />,
@@ -65,11 +70,6 @@ const CompleteInformationPage: FunctionComponent<
 			label: "Tax Info",
 			component: <TaxationInformation />,
 		},
-		{
-			title: "Accept the",
-			label: "Terms and Conditions",
-			component: <TermsConditionsSection />,
-		},
 	];
 
 	const IsLastStep = () => {
@@ -96,7 +96,12 @@ const CompleteInformationPage: FunctionComponent<
 				<Typography
 					variant="h6"
 					noWrap={true}
-					sx={{ opacity: 0.5 }}
+					sx={{
+						width: "100vw",
+						opacity: 0.5,
+						flexWrap: "wrap",
+						wordWrap: "break-word",
+					}}
 				>
 					<strong>
 						VALUE • VALUE • VALUE • VALUE • VALUE • VALUE • VALUE • VALUE •

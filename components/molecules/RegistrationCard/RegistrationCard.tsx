@@ -3,13 +3,19 @@ import { FunctionComponent, useState } from "react";
 
 // Icons
 import { ArrowForward, Facebook, Google } from "@mui/icons-material";
-
+import { MuiTelInput } from "mui-tel-input";
 // MUI Components
 import {
 	Box,
 	Button,
 	Card,
+	Checkbox,
+	FormControl,
+	FormControlLabel,
+	InputLabel,
 	Link,
+	MenuItem,
+	Select,
 	Stack,
 	TextField,
 	Typography,
@@ -20,6 +26,7 @@ import UserCredentialsType from "types/UserCredentialsType";
 
 // Styles
 import styles from "./RegistrationCard.module.css";
+import { Container } from "@mui/system";
 
 interface RegistrationCardProps {
 	OnSubmit: (credentials: UserCredentialsType) => void;
@@ -29,10 +36,16 @@ const RegistrationCard: FunctionComponent<RegistrationCardProps> = ({
 	OnSubmit,
 }) => {
 	const [userData, setUserData] = useState<UserCredentialsType>({
+		businessName: "",
+		busineesAddress: "",
+		name: "",
+		lastName: "",
 		email: "",
-		phone: 0,
+		phone: "+1",
 		pass: "",
 		passVerification: "",
+		restaurant: "",
+		numberOfLocations: 1,
 	});
 
 	const HandleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -47,13 +60,18 @@ const RegistrationCard: FunctionComponent<RegistrationCardProps> = ({
 	return (
 		<Card
 			elevation={12}
-			sx={{ p: 5, width: 500, borderRadius: 3 }}
+			sx={{ p: 6, width: "100%", maxWidth: 550, borderRadius: 3 }}
 			className={styles.Card}
 		>
 			<Stack spacing={4}>
 				<Box>
 					<Typography variant="h6">Sign your</Typography>
-					<Typography variant="h5">Restaurant</Typography>
+					<Typography
+						color={"primary"}
+						variant="h5"
+					>
+						Restaurant
+					</Typography>
 				</Box>
 
 				<Stack
@@ -61,6 +79,63 @@ const RegistrationCard: FunctionComponent<RegistrationCardProps> = ({
 					spacing={3}
 					onSubmit={HandleSubmit}
 				>
+					<TextField
+						label="Business Name"
+						value={userData.businessName}
+						onChange={HandleChange}
+						name={"businessName"}
+						type={"text"}
+						fullWidth={true}
+						required={true}
+						variant="standard"
+					/>
+
+					<TextField
+						label="Business Adress"
+						value={userData.busineesAddress}
+						onChange={HandleChange}
+						name={"busineesAddress"}
+						type={"text"}
+						fullWidth={true}
+						required={true}
+						variant="standard"
+					/>
+
+					<TextField
+						label="Flat/Office (optional)"
+						value={userData.flat_office}
+						onChange={HandleChange}
+						name={"flat_office"}
+						type={"text"}
+						fullWidth={true}
+						variant="standard"
+					/>
+
+					<Stack
+						direction={"row"}
+						gap={5}
+					>
+						<TextField
+							label="Name"
+							value={userData.name}
+							onChange={HandleChange}
+							name={"name"}
+							fullWidth={true}
+							required={true}
+							variant="standard"
+						/>
+
+						<TextField
+							label="Last Name"
+							value={userData.lastName}
+							onChange={HandleChange}
+							name={"lastName"}
+							fullWidth={true}
+							required={true}
+							variant="standard"
+						/>
+					</Stack>
+
 					<TextField
 						label="Email Address"
 						value={userData.email}
@@ -72,16 +147,22 @@ const RegistrationCard: FunctionComponent<RegistrationCardProps> = ({
 						variant="standard"
 					/>
 
-					<TextField
+					<MuiTelInput
 						label="Phone Number"
 						value={userData.phone}
-						onChange={HandleChange}
+						flagSize={"small"}
+						defaultCountry={"US"}
+						onChange={(value) => {
+							setUserData({
+								...userData,
+								phone: value,
+							});
+						}}
 						name={"phone"}
-						type={"tel"}
 						fullWidth={true}
 						required={true}
 						variant="standard"
-					/>
+					></MuiTelInput>
 
 					<TextField
 						label="Password"
@@ -105,6 +186,70 @@ const RegistrationCard: FunctionComponent<RegistrationCardProps> = ({
 						variant="standard"
 					/>
 
+					<FormControl>
+						<InputLabel required={true}>Restaurant</InputLabel>
+						<Select
+							label={"Restaurant"}
+							required={true}
+							value={userData.restaurant}
+							onChange={(e) => {
+								setUserData({
+									...userData,
+									restaurant: e.target.value,
+								});
+							}}
+						>
+							<MenuItem value={"McDonalds"}>McDonalds</MenuItem>
+							<MenuItem value={"KFC"}>KFC</MenuItem>
+						</Select>
+					</FormControl>
+
+					<FormControl>
+						<InputLabel required={true}>Number of Locations</InputLabel>
+						<Select
+							label={"Number of locations"}
+							required={true}
+							value={userData.numberOfLocations}
+							onChange={(e) => {
+								setUserData({
+									...userData,
+									numberOfLocations: Number(e.target.value),
+								});
+							}}
+						>
+							<MenuItem value={1}>1</MenuItem>
+							<MenuItem value={2}>2</MenuItem>
+							<MenuItem value={3}>3</MenuItem>
+						</Select>
+					</FormControl>
+
+					<FormControl>
+						<InputLabel>Food</InputLabel>
+						<Select
+							label={"Food"}
+							value={userData.food}
+							onChange={(e) => {
+								setUserData({
+									...userData,
+									food: e.target.value,
+								});
+							}}
+						>
+							<MenuItem value={"Mexican"}>Mexican</MenuItem>
+							<MenuItem value={"Italian"}>Italian</MenuItem>
+							<MenuItem value={"Oriental"}>Oriental</MenuItem>
+						</Select>
+					</FormControl>
+
+					<FormControlLabel
+						control={<Checkbox defaultChecked />}
+						label={
+							<Typography variant="caption">
+								I have read and agree to all the Terms and Conditions
+							</Typography>
+						}
+					/>
+
 					<Button
 						type="submit"
 						variant={"contained"}
@@ -112,49 +257,13 @@ const RegistrationCard: FunctionComponent<RegistrationCardProps> = ({
 					>
 						Sign Up
 					</Button>
-				</Stack>
 
-				<Typography
-					textAlign={"center"}
-					variant="overline"
-				>
-					-OR-
-				</Typography>
-
-				<Stack spacing={1.5}>
-					<Link
-						color="inherit"
-						variant="body2"
-						sx={{ textDecoration: "none" }}
-					>
-						<Button
-							sx={{ textTransform: "none" }}
-							fullWidth={true}
-							color="inherit"
-							size="small"
-							variant={"outlined"}
-							startIcon={<Google />}
-						>
-							Sign in with Google
-						</Button>
-					</Link>
-
-					<Link
-						color="inherit"
-						variant="body2"
-						sx={{ textDecoration: "none" }}
-					>
-						<Button
-							sx={{ textTransform: "none" }}
-							fullWidth={true}
-							color="inherit"
-							size="small"
-							variant={"outlined"}
-							startIcon={<Facebook />}
-						>
-							Sign In with Facebook
-						</Button>
-					</Link>
+					<Typography alignSelf={"center"}>
+						Already have an accion{" "}
+						<Link>
+							<b>Sign In</b>
+						</Link>
+					</Typography>
 				</Stack>
 			</Stack>
 		</Card>

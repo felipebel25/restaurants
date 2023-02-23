@@ -27,18 +27,19 @@ const Registration: NextPageWithLayout = () => {
 	return (
 		<>
 			<Box
-				className={"light-textured-bg "}
-				sx={{ py: 10 }}
+				className={"light-textured-bg"}
+				sx={{ py: 20 }}
 			>
 				<Container maxWidth={"lg"}>
 					<Stack
 						direction={{ xs: "column", lg: "row" }}
+						alignItems={{ xs: "center", lg: "start" }}
 						spacing={10}
-						alignItems={"center"}
 					>
 						<Stack
 							maxWidth={600}
 							spacing={5}
+							mt={{ xs: 0, lg: 10 }}
 						>
 							<Typography variant="h2">
 								Growing your restaurant was never this Eatsy
@@ -48,32 +49,68 @@ const Registration: NextPageWithLayout = () => {
 								your brand with the power of a 100% interactive online menu.{" "}
 							</Typography>
 
-							<List>
-								<ListItem sx={{ py: 0 }}>
-									<ListItemText primary={"CRM Administrative Panel"} />
+							<List sx={{ pl: 5 }}>
+								<ListItem
+									sx={{
+										padding: 0,
+										listStyleType: "disc",
+										display: "list-item",
+									}}
+								>
+									<Typography>CRM Administrative Panel</Typography>
 								</ListItem>
-								<ListItem sx={{ py: 0 }}>
-									<ListItemText
-										primary={"Change of products and prices in real time"}
-									/>
+								<ListItem
+									sx={{
+										padding: 0,
+										listStyleType: "disc",
+										display: "list-item",
+									}}
+								>
+									<Typography>
+										Change of products and prices in real time
+									</Typography>
 								</ListItem>
-								<ListItem sx={{ py: 0 }}>
-									<ListItemText
-										primary={"Online Menu Optimized for mobile devices"}
-									/>
+								<ListItem
+									sx={{
+										padding: 0,
+										listStyleType: "disc",
+										display: "list-item",
+									}}
+								>
+									<Typography>
+										Online Menu Optimized for mobile devices
+									</Typography>
 								</ListItem>
-								<ListItem sx={{ py: 0 }}>
-									<ListItemText primary={"Take orders easily"} />
+								<ListItem
+									sx={{
+										padding: 0,
+										listStyleType: "disc",
+										display: "list-item",
+									}}
+								>
+									<Typography>Take orders easily</Typography>
 								</ListItem>
-								<ListItem sx={{ py: 0 }}>
-									<ListItemText
-										primary={"Track the behavior of your customers in the menu"}
-									/>
+								<ListItem
+									sx={{
+										padding: 0,
+										listStyleType: "disc",
+										display: "list-item",
+									}}
+								>
+									<Typography>
+										Track the behavior of your customers in the menu{" "}
+									</Typography>
 								</ListItem>
-								<ListItem sx={{ py: 0 }}>
-									<ListItemText
-										primary={"Obtain relevant information about your menu"}
-									/>
+								<ListItem
+									sx={{
+										padding: 0,
+										listStyleType: "disc",
+										display: "list-item",
+									}}
+								>
+									<Typography>
+										Obtain relevant information about your menu
+									</Typography>
 								</ListItem>
 							</List>
 						</Stack>

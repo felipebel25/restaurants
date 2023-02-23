@@ -46,6 +46,8 @@ const TopNavBar: FunctionComponent<TopNavBarProps> = () => {
 	return (
 		<>
 			<MotionAppBar
+				elevation={0}
+				sx={{ position: "fixed", zIndex: 100, width: "100vw" }}
 				position="static"
 				className={`${theme.palette.mode}-textured-bg`}
 			>

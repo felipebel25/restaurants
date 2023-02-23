@@ -1,10 +1,10 @@
 export default interface PaymentMethodType {
-	method: "ACH" | "Credit Card" | "Debit Card";
+	method: "ACH" | "Credit/Debit Card";
 	ACHData: {
 		routingNumber?: number;
 		accountNumber?: number;
 		accountConfirmation?: number;
-		accountType?: "Checking" | "Debit Card" | "Credit Card" | string;
+		accountType?: "Checking" | "Savings" | string;
 	};
 	CardData: {
 		nameOnCard?: string;

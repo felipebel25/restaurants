@@ -29,7 +29,6 @@ const EmailVerificationModal: FunctionComponent<
 	};
 	return (
 		<Dialog
-			disableScrollLock={true}
 			open={Open}
 			onClose={CloseCallback}
 			PaperProps={{ sx: { maxWidth: 500, paddingInline: 1 } }}

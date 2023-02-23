@@ -48,7 +48,7 @@ const NewPaymentMethodModal: FunctionComponent<NewPaymentMethodModalProps> = ({
 
 	const handleMethodChange = (
 		e: React.SyntheticEvent,
-		newValue: "ACH" | "Credit Card" | "Debit Card"
+		newValue: "ACH" | "Credit/Debit Card"
 	) => {
 		SetMethodData({ ...methodData, method: newValue });
 	};
@@ -68,6 +68,7 @@ const NewPaymentMethodModal: FunctionComponent<NewPaymentMethodModalProps> = ({
 	const ACHForm = (
 		<>
 			<TextField
+				key={"routing-number"}
 				name="routing-number"
 				label="Routing Number"
 				required={true}
@@ -143,9 +144,8 @@ const NewPaymentMethodModal: FunctionComponent<NewPaymentMethodModalProps> = ({
 						});
 					}}
 				>
+					<MenuItem value={"Savings"}>Savings</MenuItem>
 					<MenuItem value={"Checking"}>Checking</MenuItem>
-					<MenuItem value={"Debit"}>Debit</MenuItem>
-					<MenuItem value={"Credit"}>Credit</MenuItem>
 				</Select>
 			</FormControl>
 		</>
@@ -153,6 +153,7 @@ const NewPaymentMethodModal: FunctionComponent<NewPaymentMethodModalProps> = ({
 	const CardForm = (
 		<>
 			<TextField
+				key={"name-on-card"}
 				name="name-on-card"
 				label="Name on card"
 				required={true}
@@ -287,7 +288,6 @@ const NewPaymentMethodModal: FunctionComponent<NewPaymentMethodModalProps> = ({
 				>
 					<Tabs
 						sx={{ flexShrink: 0 }}
-						variant="fullWidth"
 						value={methodData.method}
 						onChange={handleMethodChange}
 					>
@@ -298,16 +298,10 @@ const NewPaymentMethodModal: FunctionComponent<NewPaymentMethodModalProps> = ({
 							label={<b>ACH</b>}
 						/>
 						<Tab
-							value={"Credit Card"}
+							value={"Credit/Debit Card"}
 							icon={<CreditCardIcon />}
 							iconPosition={"start"}
-							label={<b>Debit Card</b>}
-						/>
-						<Tab
-							value={"Debit Card"}
-							icon={<CreditCardIcon />}
-							iconPosition={"start"}
-							label={<b>Credit Card</b>}
+							label={<b>Credit / Debit Card</b>}
 						/>
 					</Tabs>
 
@@ -315,8 +309,7 @@ const NewPaymentMethodModal: FunctionComponent<NewPaymentMethodModalProps> = ({
 						switch (methodData.method) {
 							case "ACH":
 								return ACHForm;
-							case "Credit Card":
-							case "Debit Card":
+							case "Credit/Debit Card":
 								return CardForm;
 						}
 					})()}

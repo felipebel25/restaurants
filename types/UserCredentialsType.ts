@@ -1,6 +1,14 @@
 export default interface UserCredentialsType {
-  email: string;
-  phone: number;
-  pass: string;
-  passVerification?: string;
+	businessName: string;
+	busineesAddress: string;
+	flat_office?: string;
+	name: string;
+	lastName: string;
+	email: string;
+	phone: string;
+	pass: string;
+	passVerification?: string;
+	restaurant: string;
+	numberOfLocations: number;
+	food?: string;
 }

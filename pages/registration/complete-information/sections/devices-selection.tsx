@@ -1,5 +1,5 @@
 import DeviceCard from "@components/molecules/DeviceCard/DeviceCard";
-import { DeviceProps } from "@types/DeviceTypes";
+import { DeviceProps } from "../../../../types/DeviceTypes";
 import { Stack } from "@mui/material";
 import { FunctionComponent, useState } from "react";
 
