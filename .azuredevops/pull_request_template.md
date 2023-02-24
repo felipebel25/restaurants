@@ -3,8 +3,10 @@
 Reemplace este texto con información relacionada con la naturaleza del cambio que se está realizando. Por favor trate de responder con su descripción a las siguientes preguntas:
 - ¿Cuál es la naturaleza del cambio que está realizando?
 - ¿Porque es necesario este cambio?
-- ¿Cuales son las partes más importantes en las que se debe enfocar la revisión?
+- ¿Cuales son las partes más importantes en las que se debe enfocar la revisión?  
+
 Recuerde que toda Pull Request (PR) debe tener relacionada a ella como mínimo una tarea vinculada al cambio que se está realizando y que las tareas creadas para el cambio deben ser atómicas, lo que quiere decir que éstas deben ser de ciclo y resolución corta.
+
 ---
 ## Indique el tipo de modificación que está realizando:
 - [ ] Nueva Característica (feature).
