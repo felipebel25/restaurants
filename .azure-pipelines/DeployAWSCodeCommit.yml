@@ -13,7 +13,7 @@ steps:
       git remote add aws https://git-codecommit.${AWS_REGION}.amazonaws.com/v1/repos/$(Build.Repository.Name)
       git config credential.helper '!aws codecommit credential-helper $@'
       git config credential.UseHttpPath true
-      git checkout -b master
+      git checkout -b $(Build.SourceBranchName)
       git fetch aws
       git push -u aws $(Build.SourceBranchName) --force
       
