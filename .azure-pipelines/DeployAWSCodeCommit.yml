@@ -1,0 +1,25 @@
+trigger: none
+pool:
+  name: aws_samgreen_ordering
+  demands:
+    - agent.name -equals aws_samgreen_ordering
+workspace:
+    clean: all
+
+# Pipeline
+steps:
+- script: |
+      cd $(System.DefaultWorkingDirectory)
+      git remote add aws https://git-codecommit.${AWS_REGION}.amazonaws.com/v1/repos/$(Build.Repository.Name)
+      git config credential.helper '!aws codecommit credential-helper $@'
+      git config credential.UseHttpPath true
+      git checkout -b master
+      git fetch aws
+      git push -u aws $(Build.SourceBranchName) --force
+      
+  displayName: 'Sync repository with AWS CodeCommit'
+
+  env:
+    AWS_REGION: $(AWS_REGION)
+    AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
+    AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
