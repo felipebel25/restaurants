@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import STYLE from './styles'
 
-import { Box, Button, SvgIcon, Typography } from '@mui/material'
+import { Box, Button, Container, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from '@mui/material'
 
 import Bag from 'public/componets/Bag'
 import Group from 'public/componets/Group'
@@ -15,7 +15,7 @@ interface CategoriesSectionProps {
   text: string,
   text2?: string,
   btnColor?: string,
-  reverse?:boolean,
+  reverse?: boolean,
 }
 
 export const CategoriesSection = ({ title, text, text2, btnColor, reverse }: CategoriesSectionProps) => {
@@ -23,55 +23,84 @@ export const CategoriesSection = ({ title, text, text2, btnColor, reverse }: Cat
   const [color, setColor] = useState(btnColor ? btnColor?.toLowerCase() : null)
   const [btnActive, setBtnActive] = useState(0)
 
+  const buttons = [
+    { label: 'Lorem Ipsum', icon: Bag },
+    { label: 'Lorem Ipsum', icon: Group },
+    { label: 'Lorem Ipsum', icon: Rocket },
+    { label: 'Lorem Ipsum', icon: Star }
+  ]
+
+  const Theme = useTheme();
+  const mediumScreen = useMediaQuery(Theme.breakpoints.down('md'));
 
   return (
-    <Box sx={reverse === true ? STYLE.container_reverse : STYLE.container}>
-     <Box sx={STYLE.container_buttons}>
-          <Button
-            onClick={()=>{setBtnActive(0)}}
-            type="submit"
-            variant={"contained"}
-            sx={btnActive === 0 ? STYLE.btn_category_active : STYLE.btn_category}
-          ><SvgIcon sx={btnActive === 0 ? STYLE.icon_active : STYLE.icon} component={Bag} /> Lorem ipsum</Button>
-          <Button
-            onClick={()=>{setBtnActive(1)}}
-            type="submit"
-            variant={"contained"}
-            sx={btnActive === 1 ? STYLE.btn_category_active : STYLE.btn_category}
-          ><SvgIcon sx={btnActive === 1 ? STYLE.icon_active : STYLE.icon} component={Group} />Lorem ipsum</Button>
-          <Button
-            onClick={()=>{setBtnActive(2)}}
-            type="submit"
-            variant={"contained"}
-            sx={btnActive === 2 ? STYLE.btn_category_active : STYLE.btn_category}
-          ><SvgIcon sx={btnActive === 2 ? STYLE.icon_active : STYLE.icon} component={Rocket} />Lorem ipsum</Button>
-          <Button
-            onClick={()=>{setBtnActive(3)}}
-            type="submit"
-            variant={"contained"}
-            sx={btnActive === 3 ? STYLE.btn_category_active : STYLE.btn_category}
-          ><SvgIcon sx={btnActive === 3 ? STYLE.icon_active : STYLE.icon} component={Star} />Lorem ipsum</Button>
-        </Box>
-      <Box sx={STYLE.container_title}>
-        <Typography
-          variant='body2'
-          style={{color:"#111827"}}
-          sx={STYLE.title} >
-          {title}
-        </Typography>
-        <Typography sx={{ color: "#111827", fontSize: "13.2px" }}>{text}</Typography>
-        {text2 && <Typography sx={{ color: "#111827", fontSize: "13.2px" }}>{text2}</Typography>}
-        <Button
-        sx={STYLE.btn}
-        style={btnColor ? {
-          boxShadow: `0px 11px 17px 7px ${color}4a`,
-          backgroundColor: `${btnColor}`
-        } : {}}
-        variant='contained'
-      >
-        Know More
-      </Button>
-      </Box>
-    </Box>
+    <Container maxWidth="xl">
+      <Container sx={{ justifyContent: 'space-around' }}>
+        <Stack
+          direction={mediumScreen ? reverse ? 'column-reverse' : 'column' : reverse ? 'row-reverse' : 'row'}
+          alignItems={'center'}
+          justifyContent={'center'}
+          spacing={mediumScreen ? '3rem' : '5rem'}
+          sx={{
+            borderRadius: '4rem',
+            width: '100%',
+
+          }}
+        >
+
+          <Box sx={{
+            ...STYLE.container_buttons, ...{
+              width: mediumScreen ? '100%' : 350,
+              flexWrap: mediumScreen ? 'nowrap' : 'wrap',
+
+            }
+          }}>
+
+            {buttons.map((button, index) =>
+              <Button
+                key={index}
+                onClick={() => { setBtnActive(index) }}
+                type="submit"
+                variant={btnActive === index ? "contained" : 'outlined'}
+                color={btnActive === index ? 'primary' : 'secondary'}
+                sx={{
+                  ...(STYLE.btn_category),
+                  ...{
+
+                    alignSelf: mediumScreen ? 'auto' : index < 2 ? 'flex-end' : 'flex-start',
+                    p: btnActive === index ? '2rem' : '1.5rem',
+                    flexShrink: mediumScreen ? 1 : 0,
+                  }
+                }}
+              >
+                <SvgIcon sx={STYLE.icon} component={button.icon} />
+                {button.label}
+              </Button>
+
+            )}
+          </Box>
+          <Box sx={STYLE.container_title}>
+            <Typography
+              variant='h2'
+            >
+              {title}
+            </Typography>
+            <Typography variant='body1'>{text}</Typography>
+            {text2 && <Typography variant='body1'>{text2}</Typography>}
+            <Button
+
+              style={btnColor ? {
+                boxShadow: `0px 11px 17px 7px rgba(236, 101, 51, 0.29)`,
+                backgroundColor: `${btnColor}`
+              } : {}}
+              variant='contained'
+            >
+              Know More
+            </Button>
+          </Box>
+
+        </Stack>
+      </Container>
+    </Container>
   )
 }

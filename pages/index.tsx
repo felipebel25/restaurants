@@ -1,14 +1,17 @@
 import { Fragment, ReactElement } from "react";
 import MainLayout from "@components/templates/MainLayout/MainLayout";
 import { NextPageWithLayout } from "./_app";
-import { HomeContent } from "@components/organisms/Home/Home";
+import { HomeContent } from "@components/templates/Home/Home";
+import { Box } from "@mui/material";
 
 
 const Home: NextPageWithLayout = () => {
 
   return (
     <Fragment >
-      <HomeContent/>
+      <Box style={{ backgroundColor: 'white' }}>
+        <HomeContent />
+      </Box>
     </Fragment>
   )
 

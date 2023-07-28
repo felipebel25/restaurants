@@ -33,17 +33,18 @@ export const DescriptionList = ({ imageProd, title, text, text2, dataList, btnCo
         width={imgSize ? imgSize : 680}
         src={imageProd}
         alt='imageProd'
-        style={fullImage ? { margin: "auto" } : {marginTop:"-2rem"}}
+        style={fullImage ? { margin: "auto" } : { marginTop: "-2rem" }}
       />
       <Box sx={STYLE.container_title}>
-        <Typography
-          variant='body2'
-          style={{ color: "#111827" }}
-          sx={STYLE.title} >
-          {title}
-        </Typography>
-        <Typography sx={{ color: "#111827", fontSize: "17.2px" }}>{text}</Typography>
-        {text2 && <Typography sx={{ color: "#111827", fontSize: "17.2px" }}>{text2}</Typography>}
+
+
+        <Typography variant='h2'> {title} </Typography>
+        <Typography variant='body1'> {text}  </Typography>
+        {text2 && <Typography variant='body1'> {text2} </Typography>}
+
+
+
+
         <Box sx={STYLE.container_list}>
           {dataList && dataList.map((point) => (
             <Box

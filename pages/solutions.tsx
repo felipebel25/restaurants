@@ -9,7 +9,7 @@ const Solutions: NextPageWithLayout = () => {
 
   return (
     <Fragment >
-      <SolutionsContent/>
+      <SolutionsContent />
     </Fragment>
   )
 

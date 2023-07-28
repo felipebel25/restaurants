@@ -13,19 +13,19 @@ import {
 	Link,
 	useMediaQuery,
 	useTheme,
+	useScrollTrigger,
+	Slide,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { motion } from "framer-motion";
 import { User, EatsyLogo } from "@icons/index";
+import Views from "pages/api/Views";
 
-const links = [
-	{ page: "Home", link: "/" },
-	{ page: "Solutions", link: "/solutions" },
-	{ page: "Plans", link: "/plans" },
-	{ page: "Company", link: "/company" },
-];
 
-interface TopNavBarProps {}
+
+
+interface TopNavBarProps { }
+
 
 const TopNavBar: FunctionComponent<TopNavBarProps> = () => {
 	const theme = useTheme();
@@ -35,95 +35,92 @@ const TopNavBar: FunctionComponent<TopNavBarProps> = () => {
 		null
 	);
 
+	const scrollTrigger = useScrollTrigger({
+		target: typeof (window) != "undefined" ? window : undefined
+	})
+
 	const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+
 		setAnchorElNav(event.currentTarget);
 	};
 
 	const handleCloseNavMenu = () => {
 		setAnchorElNav(null);
 	};
-
+	const Theme = useTheme();
 	return (
-		<>
+		<Slide appear={false} direction="down" in={!scrollTrigger}>
 			<MotionAppBar
 				elevation={0}
-				sx={{ position: "fixed", zIndex: 100, width: "100vw" }}
-				position="static"
+				position='sticky'
 				className={`${theme.palette.mode}-textured-bg`}
 			>
-				<Container maxWidth="xl">
+
+				<Container maxWidth="xl" component={'nav'}>
 					<Toolbar
 						sx={{
 							justifyContent: { lg: "flex-start", xs: "space-between" },
-							gap: 4,
-							py: 3,
+							gap: '4.375rem',
+							py: '1.5rem',
 						}}
 					>
-						<EatsyLogo width={xsBP ? 100 : 80} />
+						<EatsyLogo width={xsBP ? 96 : 64} />
 
 						{/*/////////// Desktop////////////////*/}
 
-						<Box
+						<Stack
+							flex={1}
+							direction={'row'}
+							spacing={'2.25rem'}
 							sx={{
-								direction: "row",
 								display: { xs: "none", lg: "flex" },
-								gap: 4,
 							}}
 						>
-							{links.map((link, id) => (
+
+							{Views.map((link, id) => (
 								<Link
 									underline="hover"
-									sx={{ textUnderlineOffset: 8, fontSize: 16, fontWeight: 500 }}
+									sx={{ textUnderlineOffset: 8, fontSize: '1rem', fontWeight: 500 }}
 									variant={"overline"}
 									href={link.link}
-									color="white"
+									color={Theme.palette.white.main}
 									key={id}
 									onClick={handleCloseNavMenu}
 								>
 									{link.page}
 								</Link>
 							))}
-						</Box>
+						</Stack>
 
 						<Stack
 							direction={"row"}
-							columnGap={5}
+							columnGap={'2.5rem'}
 							sx={{
-								flexGrow: 1,
+
 								justifyContent: "flex-end",
 								display: { xs: "none", lg: "flex" },
 							}}
 						>
-							<Button
-								size="small"
-								sx={{ textTransform: "none" }}
-								color="white"
-								variant="outlined"
-								startIcon={<User />}
-							>
-								<Link
-									href="/registration"
-									variant="h6"
-									color={"#FFFFFF"}
-								>
-									Sign In
-								</Link>
-							</Button>
+
 
 							<Button
-								size="small"
+								size="medium"
 								disableElevation={true}
-								sx={{ textTransform: "none" }}
+								startIcon={<User />}
 								color="white"
-								variant="contained"
-							>
-								<Link
-									href="/registration"
-									variant="h6"
-								>
-									Get a Free demo!
-								</Link>
+								variant="outlined"
+								href="/registration"
+							>	Sign In
 							</Button>
+							<Button
+								size="medium"
+								disableElevation={true}
+								color="secondary"
+								variant="contained"
+							>Get a Free demo!
+							</Button>
+
+
 						</Stack>
 
 						{/*/////////// Mobile////////////////*/}
@@ -131,25 +128,21 @@ const TopNavBar: FunctionComponent<TopNavBarProps> = () => {
 						<Box sx={{ display: { xs: "flex", lg: "none" } }}>
 							<IconButton
 								size="small"
-								aria-label="account of current user"
-								aria-controls="menu-appbar"
-								aria-haspopup="true"
 								onClick={handleOpenNavMenu}
 								color="inherit"
 							>
 								<MenuIcon />
 							</IconButton>
 							<Menu
-								id="menu-appbar"
 								anchorEl={anchorElNav}
+								keepMounted
 								anchorOrigin={{
 									vertical: "bottom",
-									horizontal: "left",
+									horizontal: "right",
 								}}
-								keepMounted
 								transformOrigin={{
-									vertical: "top",
-									horizontal: "left",
+									vertical: "bottom",
+									horizontal: "right",
 								}}
 								open={Boolean(anchorElNav)}
 								onClose={handleCloseNavMenu}
@@ -157,12 +150,14 @@ const TopNavBar: FunctionComponent<TopNavBarProps> = () => {
 									display: { xs: "block", lg: "none" },
 								}}
 							>
-								{links.map((link, id) => (
+								{Views.map((link, id) => (
 									<MenuItem
 										key={id}
+
 										onClick={handleCloseNavMenu}
 									>
-										<Typography textAlign="center">{link.page}</Typography>
+										<Link color='secondary' href={link.link}>{link.page}</Link>
+
 									</MenuItem>
 								))}
 							</Menu>
@@ -170,7 +165,7 @@ const TopNavBar: FunctionComponent<TopNavBarProps> = () => {
 					</Toolbar>
 				</Container>
 			</MotionAppBar>
-		</>
+		</Slide>
 	);
 };
 

@@ -3,11 +3,12 @@ import Image from 'next/image'
 
 import STYLE from './styles'
 
-import { Box } from '@mui/material'
+import { Box, Stack } from '@mui/material'
 
-import { homeText } from 'lang/english/homeText'
+
 import CardSection from '@components/atoms/Cards/CardSections/CardSection'
-import Calendary from 'public/componets/Calendary'
+
+import { companyText } from 'lang/english/Company'
 
 
 interface CardSectionsProps {
@@ -15,24 +16,25 @@ interface CardSectionsProps {
 
 export const CardSections: FunctionComponent = ({ }: CardSectionsProps) => {
   return (
-    <Box sx={STYLE.main}>
-      <Box sx={STYLE.container}>
+    <Stack
+
+      direction='row'
+      justifyContent={'space-around'}
+      flexWrap={'wrap'}
+      paddingY={'2rem'}
+      rowGap={'5rem'}
+      columnGap={'2rem'}
+    >
+
+      {companyText.Features.cards.map((card, index) =>
         <CardSection
-          icon={Calendary}
-          title='Automated'
-          text={homeText.descriptionCard}
-          btnColor='#EC6533' />
-        <CardSection
-          icon={Calendary}
-          title='Automated'
-          text={homeText.descriptionCard}
-          btnColor='#FAC844' />
-        <CardSection
-          icon={Calendary}
-          title='Automated'
-          text={homeText.descriptionCard}
-          btnColor='#74DED1' />
-      </Box>
-    </Box>
+          key={index}
+          icon={card.icon}
+          title={card.title}
+          text={card.description}
+          btnColor={card.color} />
+      )}
+
+    </Stack>
   )
 }

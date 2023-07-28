@@ -1,18 +1,11 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 
-import STYLE from './styles'
 
-import { Box, Button, SvgIcon, Typography } from '@mui/material'
+import { Box, Button, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from '@mui/material'
 
-import Check from 'public/componets/Check'
-import { ArrowForward } from '@mui/icons-material'
-import Bag from 'public/componets/Bag'
-import Group from 'public/componets/Group'
-import Rocket from 'public/componets/Rocket'
-import Star from 'public/componets/Star'
-import { companyText } from 'lang/english/Company'
-import Calendary from 'public/componets/Calendary'
+
+import { Edit, EventAvailableRounded, GridViewRounded } from '@mui/icons-material'
 
 
 interface CategoriesProps {
@@ -22,88 +15,95 @@ interface CategoriesProps {
 }
 
 export const Categories = ({ image, btnColor, reverse }: CategoriesProps) => {
+  const Theme = useTheme();
+  const mediumScreen = useMediaQuery(Theme.breakpoints.down('md'));
 
   const [color, setColor] = useState(btnColor ? btnColor?.toLowerCase() : null)
-  const [btnActive, setBtnActive] = useState(0)
+
+  const categories = [
+    {
+      icon: EventAvailableRounded,
+      title: 'Category',
+      description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.',
+      color: '#EC6533'
+    }, {
+      icon: Edit,
+      title: 'Category',
+      description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.',
+      color: '#FAC844'
+    }, {
+      icon: GridViewRounded,
+      title: 'Category',
+      description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.',
+      color: '#74DED1'
+    }
+  ]
+
+
+
 
 
   return (
-    <Box sx={reverse === true ? STYLE.container_reverse : STYLE.container}>
+    <Stack
+      direction={mediumScreen ? reverse ? 'column-reverse' : 'column' : reverse ? 'row-reverse' : 'row'}
+      alignItems={'center'}
+      justifyContent={'center'}
+      spacing={'1rem'}
+      sx={{
+
+        borderRadius: '4rem',
+
+      }}
+    >
       <Image
-        style={STYLE.image}
         src={image}
         alt={image}
-        width={500}
+
+        style={{ width: mediumScreen ? '80%' : 500, height: 'fit-content', maxWidth: 550 }}
       />
-      <Box sx={STYLE.container_title}>
-        <Box sx={STYLE.container_category}>
-          <Typography
-            variant='body2'
-            style={{ color: "#111827" }}
-            sx={STYLE.title} >
-            <Box
-              sx={STYLE.btn_category}
-              style={{
-                boxShadow: `0px 11px 17px 7px ${color}4a`,
-                backgroundColor: `${btnColor}`
-              }}
-            >
-              <SvgIcon
-                style={{fill:"#fff"}}
-                component={Calendary}
-                sx={STYLE.btn_icons}
-              />
-            </Box>
-            Category
-          </Typography>
-          <Typography sx={{ color: "#111827", fontSize: "13.2px" }}>{companyText.text2}</Typography>
-        </Box>
-        <Box sx={STYLE.container_category}>
-          <Typography
-            variant='body2'
-            style={{ color: "#111827" }}
-            sx={STYLE.title} >
-            <Box
-              sx={STYLE.btn_category}
-              style={{
-                boxShadow: `0px 11px 17px 7px #FAC8444a`,
-                backgroundColor: `#FAC844`
-              }}
-            >
-              <SvgIcon
-                style={{fill:"#fff"}}
-                component={Calendary}
-                sx={STYLE.btn_icons}
-              />
-            </Box>
-            Category
-          </Typography>
-          <Typography sx={{ color: "#111827", fontSize: "13.2px" }}>{companyText.text2}</Typography>
-        </Box>
-        <Box sx={STYLE.container_category}>
-          <Typography
-            variant='body2'
-            style={{ color: "#111827" }}
-            sx={STYLE.title} >
-            <Box
-              sx={STYLE.btn_category}
-              style={{
-                boxShadow: `0px 11px 17px 7px #74DED14a`,
-                backgroundColor: `#74DED1`
-              }}
-            >
-              <SvgIcon
-                style={{fill:"#fff"}}
-                component={Calendary}
-                sx={STYLE.btn_icons}
-              />
-            </Box>
-            Category
-          </Typography>
-          <Typography sx={{ color: "#111827", fontSize: "13.2px" }}>{companyText.text2}</Typography>
-        </Box>
+      <Stack spacing={'3rem'} maxWidth={'50ch'} alignItems={'center'} >
+
+
+        {categories.map((category, index) =>
+          <Box
+            sx={{ position: 'relative', }}
+            key={index}
+          >
+            <Stack direction={'row'} spacing='1rem' alignItems={'flex-start'}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexShrink: 0,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  width: '3rem',
+
+                  borderRadius: '0.5rem',
+                  aspectRatio: 1,
+                  boxShadow: `0px 11px 17px 7px ${category.color}4a`,
+                  backgroundColor: `${category.color}`
+                }}
+
+              >
+                <SvgIcon component={category.icon} />
+
+              </Box>
+
+              <Box>
+                <Typography
+                  variant='h5'
+                >
+                  {category.title}
+                </Typography>
+                <Typography variant='body1'>{category.description}</Typography>
+              </Box>
+            </Stack>
+          </Box>
+
+        )}
+
         <Button
-          sx={STYLE.btn}
+          fullWidth
           style={btnColor ? {
             boxShadow: `0px 11px 17px 7px ${color}4a`,
             backgroundColor: `${btnColor}`
@@ -112,7 +112,8 @@ export const Categories = ({ image, btnColor, reverse }: CategoriesProps) => {
         >
           Know More
         </Button>
-      </Box>
-    </Box>
+
+      </Stack>
+    </Stack >
   )
 }

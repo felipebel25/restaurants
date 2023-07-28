@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import STYLE from './styles'
 
-import { Box, Button, SvgIcon, Typography } from '@mui/material'
+import { Box, Button, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from '@mui/material'
 
 import { homeText } from 'lang/english/homeText'
 import Check from 'public/componets/Check'
@@ -16,53 +16,75 @@ interface EatsyproductProps {
   imageProd: any,
   dataList?: Array<string>,
   btnColor?: string,
-  reverse?:boolean,
+  bg?: string,
+  reverse?: boolean,
 }
 
-export const Eatsyproduct = ({ imageProd, title, text, text2, dataList, btnColor, reverse }: EatsyproductProps) => {
+export const Eatsyproduct = ({ imageProd, title, text, text2, dataList, btnColor, reverse, bg = 'white' }: EatsyproductProps) => {
 
   const [color, setColor] = useState(btnColor ? btnColor?.toLowerCase() : null)
-  
+
+  const Theme = useTheme();
+  const mediumScreen = useMediaQuery(Theme.breakpoints.down('md'));
+
 
   return (
-    <Box sx={reverse === true ? STYLE.container_reverse : STYLE.container}>
+    <Stack
+      direction={mediumScreen ? reverse ? 'column-reverse' : 'column' : reverse ? 'row-reverse' : 'row'}
+      alignItems={'center'}
+      justifyContent={'space-around'}
+      spacing={'2rem'}
+      sx={{
+        borderRadius: '4rem',
+        background: `${bg}`,
+        p: '4rem 2rem'
+      }}
+    >
       <Image
-        width={800}
+        style={{ width: mediumScreen ? '80%' : '50%', height: 'fit-content', maxWidth: 500 }}
         src={imageProd}
         alt='imageProd' />
-      <Box sx={STYLE.container_title}>
+
+      <Stack
+        maxWidth={'60ch'}
+        spacing={'2rem'}
+      >
+
+
         <Typography
-          variant='body2'
-          style={{color:`${btnColor}`}}
-          sx={STYLE.title} >
+          variant='h2'
+          style={{ color: `${btnColor}` }}
+        >
           {title}
         </Typography>
-        <Typography sx={{ color: "#111827", fontSize: "16.2px" }}>{text}</Typography>
-        {text2 && <Typography sx={{ color: "#111827", fontSize: "16.2px" }}>{text2}</Typography>}
-        <Box sx={STYLE.container_list }>
-        {dataList && dataList.map((point) => (
-          <Box
-            sx={STYLE.container_points}
-            key={point}
-          >
-            <SvgIcon
-              sx={{ fill: `${btnColor}`, stroke: "transparent" }}
-              component={Check} />
-            <Typography sx={STYLE.points}>{point}</Typography>
-          </Box>
-        ))}
-      </Box>
+
+        <Typography variant='body1'>{text}  </Typography>
+        {text2 && <Typography variant='body1'> {text2} </Typography>}
+
+        <Box sx={STYLE.container_list}>
+          {dataList && dataList.map((point) => (
+            <Box
+              sx={STYLE.container_points}
+              key={point}
+            >
+              <SvgIcon
+                sx={{ fill: `${btnColor}`, stroke: "transparent" }}
+                component={Check} />
+              <Typography variant='overline' fontWeight={600}>{point}</Typography>
+            </Box>
+          ))}
+        </Box>
+
         <Button
-        sx={STYLE.btn}
-        style={btnColor ? {
-          boxShadow: `0px 11px 17px 7px ${color}4a`,
-          backgroundColor: `${btnColor}`
-        } : {}}
-        variant='contained'
-      >
-        Buy Now
-      </Button>
-      </Box>
-    </Box>
+          style={btnColor ? {
+            boxShadow: `0px 11px 17px 7px ${color}4a`,
+            backgroundColor: `${btnColor}`
+          } : {}}
+          variant='contained'
+        >
+          Buy Now
+        </Button>
+      </Stack>
+    </Stack>
   )
 }

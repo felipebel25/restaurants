@@ -24,9 +24,7 @@ const STYLE = {
     gap: "3rem",
   },
 
-  image: {
-    margin: "2rem auto auto auto",
-  },
+
 
   title: {
     color: "#111827",
@@ -34,21 +32,22 @@ const STYLE = {
     maxWidth: "350px",
     fontSize: "2rem",
     fontWeight: 700,
-    margin:"0 0 0 -4rem",
+    margin: "0 0 0 -4rem",
     display: "flex",
-    gap:"1rem",
+    gap: "1rem",
     justifyContent: "left",
   },
 
-  container_category:{
-    display:"flex",
+  container_category: {
+    position: 'relative',
+    display: "flex",
     flexDirection: "column",
   },
 
   btn_category: {
-    width:"3rem",
-    heigth:"3rem",
-    display:"flex",
+    width: "3rem",
+    heigth: "3rem",
+    display: "flex",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: "10px",
@@ -64,7 +63,7 @@ const STYLE = {
     textTransform: "none",
     fontSize: "20px",
     fontWeight: 500,
-    marginLeft:"-3rem"
+    marginLeft: "-3rem"
   },
 
   container_list: {

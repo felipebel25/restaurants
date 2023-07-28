@@ -3,7 +3,7 @@ const STYLE = {
     width: "max-content",
     display: "flex",
     margin: "auto",
-    gap:"5rem"
+    gap: "5rem"
   },
 
   container_reverse: {
@@ -11,21 +11,20 @@ const STYLE = {
     display: "flex",
     flexDirection: "row-reverse",
     margin: "auto",
-    gap:"5rem"
+    gap: "5rem"
   },
 
   container_title: {
     display: "flex",
-    minWidth: "400px",
-    maxWidth: "400px",
+    maxWidth: '50ch',
     flexDirection: "column",
     justifyContent: "left",
-    margin: "5rem auto auto auto",
+
     gap: "1.5rem",
   },
 
   image: {
-    margin:"auto",
+    margin: "auto",
   },
 
   title: {
@@ -54,50 +53,34 @@ const STYLE = {
   },
 
   container_buttons: {
-    margin: "auto",
-    marginTop:"5rem",
+
     display: "flex",
-    flexWrap:"wrap",
-    width: "500px",
-    gap: "2rem"
+    flexWrap: "wrap",
+    flexShrink: 0,
+    gap: "1rem",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
 
   btn_category: {
-    display:"flex",
+    display: "flex",
+    flexShrink: 0,
     flexDirection: "column",
-    gap:"1rem",
-    fontSize:".8rem",
-    backgroundColor: "#ffff",
-    color: "#6B7280",
+    gap: "0.5rem",
+    fontSize: ".8rem",
     fontWeight: 700,
-    width:"11rem",
-    height: "10rem",
-    boxShadow:"0px 11px 17px 7px #F3F4F6",
+    boxShadow: "0px 11px 17px 7px #F3F4F6",
     textTransform: "none",
+
   },
 
-  btn_category_active: {
-    display:"flex",
-    flexDirection: "column",
-    gap:"1rem",
-    fontSize:"1rem",
-    backgroundColor: "#ffff",
-    color: "#EC6533",
-    width:"15rem",
-    height: "14rem",
-    fontWeight: 700,
-    boxShadow:"0px 11px 17px 7px #F3F4F6",
-    textTransform: "none",
+
+  icon: {
+    fontSize: "2rem",
   },
 
-  icon:{
-    fontSize:"3rem",
-  },
 
-  icon_active:{
-    fontSize:"5rem",
-  }
 
 }
 

@@ -2,7 +2,7 @@ import MainTheme from "styles/themes/Theme";
 
 const STYLE = {
 	card: {
-		width: "400px",
+		width: "100%",
 		height: "220px",
 		padding: "1rem",
 		display: "flex",

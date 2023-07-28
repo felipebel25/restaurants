@@ -15,22 +15,16 @@ const STYLE = {
     backgroundColor: "#FFFFFF",
     transform: "rotate(-180deg)",
     borderRadius: "50%",
-    marginBottom:"-4rem"
+    marginBottom: "-4rem"
   },
 
   logo_list: {
     width: "100%",
     height: "400px",
-    display:"flex",
+    display: "flex",
   },
 
-  container_logos:{
-  width: "100%",
-  height:"max-content",
-  display:"flex",
-  justifyContent:"space-around",
-  margin:"auto"
-  },
+
 
   bottom_elipse: {
     width: "100%",
@@ -38,35 +32,37 @@ const STYLE = {
     backgroundColor: "#FFFFFF",
     transform: "rotate(-180deg)",
     borderRadius: "50%",
-    marginTop:"-4rem"
+    marginTop: "-4rem"
   },
 
-  container_card:{
-    display:"flex",
-    flexDirection:"column",
+  container_card: {
+    display: "flex",
+    flexDirection: "column",
+
   },
 
-  card:{
-    margin:"0 auto 2rem auto",
-    display:"flex",
-    justifyContent:"center",
-    padding:"1rem",
-    backgroundColor:"#FFFFFF",
+  card: {
+    margin: "0 auto 2rem auto",
+    display: "flex",
+    justifyContent: "center",
+    padding: "1rem",
+    backgroundColor: '#FFB020',
     borderRadius: "7px",
-    color:"#EC6533",
+    color: "#EC6533",
   },
 
-  text_cards:{
-    margin:"auto",
-    fontWeight:500,
+  text_cards: {
+    margin: "auto",
+    fontWeight: 500,
   },
-  num_cards:{
-    margin:"auto",
-    fontWeight:600,
+  num_cards: {
+    margin: "auto",
+    fontWeight: 600,
   },
 
-  icon:{
-    fontSize:"2.5rem",
+  icon: {
+
+    fontSize: "2.5rem",
   },
 }
 

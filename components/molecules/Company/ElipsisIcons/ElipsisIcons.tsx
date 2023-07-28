@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 
 import STYLE from './styles'
 
-import { Box, SvgIcon, Typography, useTheme } from '@mui/material'
+import { Box, Container, Stack, SvgIcon, Typography, useTheme } from '@mui/material'
 
 import Star from 'public/componets/Star'
 import Group from 'public/componets/Group'
@@ -19,42 +19,41 @@ export const ElipsisIcons: FunctionComponent = ({ }: ElipsisIconsProps) => {
 
   const theme = useTheme();
 
-  return (
-    <Box sx={STYLE.main}>
+  const icons = [
+    {
+      title: '+1000',
+      subtitle: 'Lorem Ipsum',
+      icon: Star
+    }, {
+      title: '40',
+      subtitle: 'Lorem Ipsum',
+      icon: Group
+    }
+    , {
+      title: '10',
+      subtitle: 'Lorem Ipsum',
+      icon: Alert
+    }, {
+      title: '800',
+      subtitle: 'Lorem Ipsum',
+      icon: Calendary
+    }
+  ]
 
-      <Box sx={STYLE.container_logoList}>
-        <Box sx={STYLE.top_elipse} />
-        <Box
-          className={`${theme.palette.mode}-textured-bg`}
-          sx={STYLE.logo_list}
-        >
-          <Box sx={STYLE.container_logos}>
-            <Box sx={STYLE.container_card}>
-              <Box sx={STYLE.card}><SvgIcon sx={STYLE.icon} component={Star} /></Box>
-              <Typography sx={STYLE.num_cards}>+1000</Typography>
-              <Typography sx={STYLE.text_cards}>Lorem ips</Typography>
-            </Box>
-            <Box sx={STYLE.container_card}>
-              <Box sx={STYLE.card}><SvgIcon sx={STYLE.icon} component={Group} /></Box>
-              <Typography sx={STYLE.num_cards}>40</Typography>
-              <Typography sx={STYLE.text_cards}>Lorem ips</Typography>
-            </Box>
-            <Box sx={STYLE.container_card}>
-              <Box sx={STYLE.card}><SvgIcon sx={STYLE.icon} component={Alert} /></Box>
-              <Typography sx={STYLE.num_cards}>10</Typography>
-              <Typography sx={STYLE.text_cards}>Lorem ips</Typography>
-            </Box>
-            <Box sx={STYLE.container_card}>
-              <Box sx={STYLE.card}>
-                <SvgIcon sx={STYLE.icon} component={Calendary} />
-              </Box>
-              <Typography sx={STYLE.num_cards}>800</Typography>
-              <Typography sx={STYLE.text_cards}>Lorem ips</Typography>
-            </Box>
+  return (
+
+    <Container maxWidth="lg" >
+      <Stack direction={'row'} justifyContent={'space-around'} flexWrap={'wrap'} gap='2rem'>
+        {icons.map((icon, index) =>
+
+          <Box key={index} textAlign={'center'} sx={STYLE.container_card}>
+            <Box sx={STYLE.card}><SvgIcon sx={STYLE.icon} htmlColor='white' component={icon.icon} /></Box>
+            <Typography variant='h6'>{icon.title}</Typography>
+            <Typography variant='subtitle1'>{icon.subtitle}</Typography>
           </Box>
-        </Box>
-        <Box sx={STYLE.bottom_elipse} />
-      </Box>
-    </Box>
+        )}
+      </Stack>
+    </Container>
+
   )
 }

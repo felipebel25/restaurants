@@ -2,13 +2,15 @@ import React, { FunctionComponent } from 'react'
 
 import STYLE from './style'
 
-import { Box, Typography } from '@mui/material'
+import { Box, Container, Stack, Typography } from '@mui/material'
 import { solutionsText } from 'lang/english/solutionsText'
-import { ButtonsCategories } from '@components/molecules/Solutions/ButtonsCategories/ButtonsCategories'
 import CardDescription from '@components/atoms/Cards/CardDescription/CardDescription'
 import Star from 'public/componets/Star'
 import Group from 'public/componets/Group'
 import Alert from 'public/componets/Alert'
+import Departments from './Departments/Departments'
+import UseCases from './Use-Cases/UseCases'
+import CardDescriptionGroup from '@components/atoms/Cards/CardDescriptionGroup/CardDescriptionGroup'
 
 interface SolutionsContentProps {
 }
@@ -16,46 +18,70 @@ interface SolutionsContentProps {
 export const SolutionsContent: FunctionComponent = ({ }: SolutionsContentProps) => {
   return (
     <Box sx={STYLE.main}>
-      <Box sx={STYLE.section_one}>
-        <Typography sx={STYLE.first_title}>{solutionsText.firsTitle}</Typography>
-        <Typography sx={STYLE.first_description}>{solutionsText.eatsy}</Typography>
-      </Box>
-      <ButtonsCategories titleSection="Departaments" />
-      <Box sx={STYLE.card_section}>
-        <CardDescription
-          title="Aircraft Benefits"
-          text={solutionsText.cardSections}
-          icon={Star}
-        />
-        <CardDescription
-          title="Aircraft Benefits"
-          text={solutionsText.cardSections}
-          icon={Group}
-        />
-        <CardDescription
-          title="Aircraft Benefits"
-          text={solutionsText.cardSections}
-          icon={Alert}
-        />
-      </Box>
-      <ButtonsCategories titleSection="Use case" />
-      <Box sx={STYLE.card_section}>
-        <CardDescription
-          title="Aircraft Benefits"
-          text={solutionsText.cardSections}
-          icon={Star}
-        />
-        <CardDescription
-          title="Aircraft Benefits"
-          text={solutionsText.cardSections}
-          icon={Group}
-        />
-        <CardDescription
-          title="Aircraft Benefits"
-          text={solutionsText.cardSections}
-          icon={Alert}
-        />
-      </Box>
-    </Box>
+      <Container maxWidth='xl'>
+
+        <Stack alignItems={'center'} spacing={'7rem'} >
+
+
+          <Stack
+            spacing='1rem'
+            maxWidth='sm'
+            alignItems={'center'}
+            textAlign={'center'}>
+            <Typography variant='h2' >{solutionsText.title}</Typography>
+            <Typography variant='body1' >{solutionsText.description}</Typography>
+          </Stack>
+
+
+
+          <Departments />
+
+
+          <CardDescriptionGroup
+            color='linear-gradient(150deg, rgba(250, 200, 68, 0.28) 0%, rgba(250, 200, 68, 0.08) 100%)'>
+            <CardDescription
+              title="Aircraft Benefits"
+              text={solutionsText.cardSections}
+              icon={Star}
+            />
+            <CardDescription
+              title="Aircraft Benefits"
+              text={solutionsText.cardSections}
+              icon={Group}
+            />
+            <CardDescription
+              title="Aircraft Benefits"
+              text={solutionsText.cardSections}
+              icon={Alert}
+            />
+          </CardDescriptionGroup>
+
+          <UseCases />
+
+          <CardDescriptionGroup
+            color='linear-gradient(325deg, rgba(174, 255, 239, 0.00) 0%, rgba(174, 255, 239, 0.16) 0.01%, rgba(174, 255, 239, 0.50) 93.27%)'>
+            <CardDescription
+              iconColor='secondary'
+              title="Aircraft Benefits"
+              text={solutionsText.cardSections}
+              icon={Star}
+            />
+            <CardDescription
+              iconColor='secondary'
+              title="Aircraft Benefits"
+              text={solutionsText.cardSections}
+              icon={Group}
+            />
+            <CardDescription
+              iconColor='secondary'
+              title="Aircraft Benefits"
+              text={solutionsText.cardSections}
+              icon={Alert}
+            />
+          </CardDescriptionGroup>
+
+        </Stack>
+      </Container>
+    </Box >
   )
 }

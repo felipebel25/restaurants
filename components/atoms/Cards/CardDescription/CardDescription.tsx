@@ -2,7 +2,7 @@
 import React from 'react'
 
 // MUI Components
-import { Box, Button, SvgIcon, Typography } from '@mui/material'
+import { Button, Stack, SvgIcon, Typography } from '@mui/material'
 
 //Style
 import STYLE from "./styles"
@@ -11,32 +11,48 @@ interface CardDescriptionProps {
   text: string,
   title: string,
   icon: any,
+  iconColor?: "disabled" | "action" | "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning"
 }
 
 
-const CardDescription = ({ text, title, icon }: CardDescriptionProps) => {
+const CardDescription = ({ text, title, icon, iconColor = 'inherit' }: CardDescriptionProps) => {
 
   return (
-    <Box sx={STYLE.container}>
+    <Stack
+      alignItems={'center'}
+      spacing='1rem'
+      maxWidth={300}
+      minWidth={150}
+      sx={{ color: '#6B7280' }}
+    >
       <Button
-        type="submit"
-        variant={"contained"}
+        disableElevation
+        variant='contained'
+        size='large'
+        color="white"
         sx={STYLE.btn}
       >
         <SvgIcon
-          component={icon}
+          color={iconColor}
           sx={STYLE.btn_icons}
+          component={icon}
         />
       </Button>
-      <Typography sx={STYLE.title}>{title}</Typography>
-      <Box sx={STYLE.textDescription}>
-        <Typography
-          sx={STYLE.decription}
-          variant='body2'>
-          {text}
-        </Typography>
-      </Box>
-    </Box>
+
+      <Typography
+        textAlign={'center'}
+        variant='h5'
+        sx={{ color: 'inherit' }}>
+        {title}
+      </Typography>
+
+      <Typography
+        sx={{ color: 'inherit' }}
+        variant='body2'>
+        {text}
+      </Typography>
+
+    </Stack>
   )
 }
 
