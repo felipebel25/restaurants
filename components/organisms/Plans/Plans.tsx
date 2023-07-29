@@ -4,7 +4,7 @@ import STYLE from './style'
 
 import { Box, Container, Stack, Typography, useTheme } from '@mui/material'
 import Image from 'next/image'
-import Vector from 'public/svg/Vector.svg'
+import Vector from 'public/SVG/Vector.svg'
 
 import { PlanCardList } from '@components/molecules/Plans/PlanCardList/PlanCardList'
 import { CardsDescription } from '@components/molecules/Plans/CardsDescription/CardsDescription'
