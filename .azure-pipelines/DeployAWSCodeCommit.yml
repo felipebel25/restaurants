@@ -1,8 +1,6 @@
 trigger: none
 pool:
-  name: aws_samgreen_ordering
-  demands:
-    - agent.name -equals aws_samgreen_ordering
+  name: EatsyOrders
 workspace:
     clean: all
 
