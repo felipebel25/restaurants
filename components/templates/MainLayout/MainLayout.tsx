@@ -5,7 +5,7 @@ import {
 	ReactElement,
 } from "react";
 import TopNavBar from "@components/molecules/TopNavBar/TopNavBar";
-import { Box } from "@mui/system";
+
 import Footer from "@components/molecules/Footer/Footer";
 
 interface MainLayoutProps {

@@ -1,87 +1,70 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent } from "react";
 
-import STYLE from './style'
+import STYLE from "./style";
 
-import { Box, Container, Stack, Typography } from '@mui/material'
-import { solutionsText } from 'lang/english/solutionsText'
-import CardDescription from '@components/atoms/Cards/CardDescription/CardDescription'
-import Star from 'public/componets/Star'
-import Group from 'public/componets/Group'
-import Alert from 'public/componets/Alert'
-import Departments from './Departments/Departments'
-import UseCases from './Use-Cases/UseCases'
-import CardDescriptionGroup from '@components/atoms/Cards/CardDescriptionGroup/CardDescriptionGroup'
+import { Box, Container, Stack, Typography } from "@mui/material";
+import { solutionsText } from "lang/english/solutionsCopy";
+import CardDescription from "@components/atoms/Cards/CardDescription/CardDescription";
+import Star from "public/componets/Star";
+import Group from "public/componets/Group";
+import Alert from "public/componets/Alert";
 
-interface SolutionsContentProps {
-}
+import CardDescriptionGroup from "@components/atoms/Cards/CardDescriptionGroup/CardDescriptionGroup";
 
-export const SolutionsContent: FunctionComponent = ({ }: SolutionsContentProps) => {
-  return (
-    <Box sx={STYLE.main}>
-      <Container maxWidth='xl'>
+import { SlideGroupSelection } from "@components/molecules/SlideGroupSelection/SlideGroupSelection";
+import { features } from "process";
 
-        <Stack alignItems={'center'} spacing={'7rem'} >
+interface SolutionsContentProps {}
 
+export const SolutionsContent: FunctionComponent =
+	({}: SolutionsContentProps) => {
+		return (
+			<Box sx={STYLE.main}>
+				<Container maxWidth="xl">
+					<Stack
+						alignItems={"center"}
+						spacing={"7rem"}
+					>
+						<Stack
+							spacing="1rem"
+							maxWidth="sm"
+							alignItems={"center"}
+							textAlign={"center"}
+						>
+							<Typography variant="h2">{solutionsText.Hero.title}</Typography>
+							<Typography variant="body1">
+								{solutionsText.Hero.subTitle}
+							</Typography>
+						</Stack>
 
-          <Stack
-            spacing='1rem'
-            maxWidth='sm'
-            alignItems={'center'}
-            textAlign={'center'}>
-            <Typography variant='h2' >{solutionsText.title}</Typography>
-            <Typography variant='body1' >{solutionsText.description}</Typography>
-          </Stack>
+						<SlideGroupSelection slides={solutionsText.Departments} />
 
+						<CardDescriptionGroup color="linear-gradient(150deg, rgba(250, 200, 68, 0.28) 0%, rgba(250, 200, 68, 0.08) 100%)">
+							{solutionsText.DepartmentsFeatures.map((feature, index) => (
+								<CardDescription
+									key={index}
+									title={feature.title}
+									text={feature.body}
+									icon={feature.icon}
+								/>
+							))}
+						</CardDescriptionGroup>
 
+						<SlideGroupSelection slides={solutionsText.UseCases} />
 
-          <Departments />
-
-
-          <CardDescriptionGroup
-            color='linear-gradient(150deg, rgba(250, 200, 68, 0.28) 0%, rgba(250, 200, 68, 0.08) 100%)'>
-            <CardDescription
-              title="Aircraft Benefits"
-              text={solutionsText.cardSections}
-              icon={Star}
-            />
-            <CardDescription
-              title="Aircraft Benefits"
-              text={solutionsText.cardSections}
-              icon={Group}
-            />
-            <CardDescription
-              title="Aircraft Benefits"
-              text={solutionsText.cardSections}
-              icon={Alert}
-            />
-          </CardDescriptionGroup>
-
-          <UseCases />
-
-          <CardDescriptionGroup
-            color='linear-gradient(325deg, rgba(174, 255, 239, 0.00) 0%, rgba(174, 255, 239, 0.16) 0.01%, rgba(174, 255, 239, 0.50) 93.27%)'>
-            <CardDescription
-              iconColor='secondary'
-              title="Aircraft Benefits"
-              text={solutionsText.cardSections}
-              icon={Star}
-            />
-            <CardDescription
-              iconColor='secondary'
-              title="Aircraft Benefits"
-              text={solutionsText.cardSections}
-              icon={Group}
-            />
-            <CardDescription
-              iconColor='secondary'
-              title="Aircraft Benefits"
-              text={solutionsText.cardSections}
-              icon={Alert}
-            />
-          </CardDescriptionGroup>
-
-        </Stack>
-      </Container>
-    </Box >
-  )
-}
+						<CardDescriptionGroup color="linear-gradient(325deg, rgba(174, 255, 239, 0.00) 0%, rgba(174, 255, 239, 0.16) 0.01%, rgba(174, 255, 239, 0.50) 93.27%)">
+							{solutionsText.UseCasesFeatures.map((feature, index) => (
+								<CardDescription
+									iconColor="secondary"
+									key={index}
+									title={feature.title}
+									text={feature.body}
+									icon={feature.icon}
+								/>
+							))}
+						</CardDescriptionGroup>
+					</Stack>
+				</Container>
+			</Box>
+		);
+	};

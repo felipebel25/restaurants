@@ -2,11 +2,15 @@ import { SxProps } from "@mui/system"
 
 
 interface HeroStylesProps {
-
+  container: SxProps,
   rating: SxProps,
 }
 const STYLE: HeroStylesProps = {
-
+  container: {
+    gap: '6rem',
+    alignItems: 'center',
+    overflow: 'visible'
+  },
 
   rating: {
     display: "flex",

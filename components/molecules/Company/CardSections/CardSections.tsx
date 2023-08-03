@@ -1,40 +1,35 @@
-import React, { FunctionComponent } from 'react'
-import Image from 'next/image'
+import React, { FunctionComponent } from "react";
+import Image from "next/image";
 
-import STYLE from './styles'
+import STYLE from "./styles";
 
-import { Box, Stack } from '@mui/material'
+import { Box, Stack } from "@mui/material";
 
+import CardSection from "@components/atoms/Cards/CardSections/CardSection";
 
-import CardSection from '@components/atoms/Cards/CardSections/CardSection'
+import { companyText } from "lang/english/companyCopy";
 
-import { companyText } from 'lang/english/Company'
+interface CardSectionsProps {}
 
-
-interface CardSectionsProps {
-}
-
-export const CardSections: FunctionComponent = ({ }: CardSectionsProps) => {
-  return (
-    <Stack
-
-      direction='row'
-      justifyContent={'space-around'}
-      flexWrap={'wrap'}
-      paddingY={'2rem'}
-      rowGap={'5rem'}
-      columnGap={'2rem'}
-    >
-
-      {companyText.Features.cards.map((card, index) =>
-        <CardSection
-          key={index}
-          icon={card.icon}
-          title={card.title}
-          text={card.description}
-          btnColor={card.color} />
-      )}
-
-    </Stack>
-  )
-}
+export const CardSections: FunctionComponent = ({}: CardSectionsProps) => {
+	return (
+		<Stack
+			direction="row"
+			justifyContent={"space-around"}
+			flexWrap={"wrap"}
+			paddingY={"2rem"}
+			rowGap={"5rem"}
+			columnGap={"2rem"}
+		>
+			{companyText.Features.map((feature, index) => (
+				<CardSection
+					key={index}
+					icon={feature.icon}
+					title={feature.title}
+					text={feature.description}
+					btnColor={feature.color}
+				/>
+			))}
+		</Stack>
+	);
+};
