@@ -30,6 +30,7 @@ export const HomeContent: FunctionComponent = ({}: HomeContentProps) => {
 					paddingY={"3.62rem"}
 				>
 					<Hero phoneView={phoneView} />
+					<PartnersRibbon phoneView={phoneView} />
 					<TakeControl phoneView={phoneView} />
 					<SaveMoney phoneView={phoneView} />
 					<Features phoneView={phoneView} />
@@ -38,7 +39,7 @@ export const HomeContent: FunctionComponent = ({}: HomeContentProps) => {
 					<ClientOpinions phoneView={phoneView} />
 				</Stack>
 			</Container>
-			<PartnersRibbon phoneView={phoneView} />
+
 			<Newsletter phoneView={phoneView} />
 		</Box>
 	);

@@ -84,15 +84,24 @@ a {
 }
 
 .light-textured-bg {
-	background-image: url("/Texture Light Tile.png");
-	background-repeat: repeat;
-	background-size: 200px;
+
+	background: var(--texture-light-gradient,
+			linear-gradient(60deg, rgba(254, 12, 84, 0.14) 17.71%, rgba(255, 214, 0, 0.20) 93.18%),
+			url("/Texture Light Tile.png") 0px 00px / 200px repeat,
+			lightgray 0% 0% / 25px 25px repeat);
+
 }
 
+
+
 .dark-textured-bg {
-	background-image: url("/Texture Dark Tile.png");
-	background-repeat: repeat;
-	background-size: 200px;
+
+	background: var(--texture-light-gradient,
+			linear-gradient(96deg, rgba(0, 5, 11, 0.12) 0%, rgba(21, 24, 60, 0.19) 48.44%, rgba(63, 25, 86, 0.26) 100%),
+			url("/Texture Dark Tile.png") 0px 00px / 200px repeat,
+			lightgray 0% 0% / 25px 25px repeat);
+
+
 }
 
 @media (prefers-color-scheme: dark) {

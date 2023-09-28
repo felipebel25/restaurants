@@ -62,10 +62,10 @@ const TopNavBar: FunctionComponent<TopNavBarProps> = () => {
 						sx={{
 							justifyContent: { lg: "flex-start", xs: "space-between" },
 							gap: "4.375rem",
-							py: "1.5rem",
+							py: "1rem",
 						}}
 					>
-						<EatsyLogo width={xsBP ? 96 : 64} />
+						<EatsyLogo size={"4.7rem"} />
 
 						{/*/////////// Desktop////////////////*/}
 
@@ -105,20 +105,19 @@ const TopNavBar: FunctionComponent<TopNavBarProps> = () => {
 							}}
 						>
 							<Button
-								size="medium"
+								size="small"
 								disableElevation={true}
 								startIcon={<User />}
 								color="white"
-								variant="outlined"
+								variant="text"
 								href="/registration"
 							>
-								{" "}
 								Sign In
 							</Button>
 							<Button
-								size="medium"
+								size="small"
 								disableElevation={true}
-								color="secondary"
+								color="white"
 								variant="contained"
 							>
 								Get a Free demo!

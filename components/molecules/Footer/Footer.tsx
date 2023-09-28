@@ -7,10 +7,12 @@ import {
 } from "@mui/icons-material";
 import {
 	Box,
+	Button,
 	Container,
 	IconButton,
 	Link,
 	Stack,
+	TextField,
 	Typography,
 	useMediaQuery,
 	useTheme,
@@ -30,29 +32,30 @@ const Footer: FunctionComponent<FooterProps> = () => {
 			component={"footer"}
 			className="dark-textured-bg"
 			sx={{
-				paddingY: "5rem",
+				paddingTop: "5rem",
+				paddingBottom: "3.25rem",
 			}}
 		>
 			<Container>
 				<Stack
-					direction={phoneView ? "column" : "row"}
-					justifyContent={"space-evenly"}
-					flexWrap={"wrap"}
-					gap={"3.5rem"}
-					color={THEME.palette.white.main}
+					direction={"column"}
+					gap={"2.5rem"}
 				>
+					<EatsyLogo size={"5.87rem"} />
+
 					<Stack
+						direction={"row"}
 						spacing={"2rem"}
-						alignItems={"center"}
+						justifyContent={"space-between"}
 					>
-						<EatsyLogo width={phoneView ? 64 : 96} />
+						{/* <EatsyLogo size={phoneView ? 64 : 96} />
 						<Typography
 							variant="overline"
 							color="inherit"
 						>
 							2023 - Eatsy Orders
-						</Typography>
-						<Stack
+						</Typography> */}
+						{/* <Stack
 							direction={"row"}
 							spacing={"1.5rem"}
 						>
@@ -72,66 +75,107 @@ const Footer: FunctionComponent<FooterProps> = () => {
 								{" "}
 								<YouTube />
 							</IconButton>
-						</Stack>
-					</Stack>
+						</Stack> */}
 
-					<Stack spacing={"1.5rem"}>
-						<Typography
-							variant="h6"
-							color="inherit"
-						>
-							Contact
-						</Typography>
-						<Typography
-							variant="subtitle1"
-							color="inherit"
-						>
-							support@eatsyorders.com
-						</Typography>
-						<Typography
-							variant="subtitle1"
-							color="inherit"
-						>
-							<strong>Sales:</strong> +1 555 5555
-						</Typography>
-						<Typography
-							variant="subtitle1"
-							color="inherit"
-						>
-							<strong>Support:</strong> +1 555 5555{" "}
-						</Typography>
-					</Stack>
-
-					<Stack spacing={"1.5rem"}>
-						<Typography
-							variant="h6"
-							color="inherit"
-						>
-							Sitemap
-						</Typography>
-
-						{Views.map((link, id) => (
-							<Link
-								href={link.link}
+						<Stack spacing={"1.5rem"}>
+							<Typography
+								variant="h6"
 								color="inherit"
-								key={id}
 							>
-								{link.page}
-							</Link>
-						))}
-					</Stack>
+								Contact
+							</Typography>
+							<Stack spacing={"0.5rem"}>
+								<Typography
+									variant="subtitle1"
+									color="inherit"
+								>
+									support@eatsyorders.com
+								</Typography>
+								<Typography
+									variant="subtitle1"
+									color="inherit"
+								>
+									<strong>Sales:</strong> +1 555 5555
+								</Typography>
+								<Typography
+									variant="subtitle1"
+									color="inherit"
+								>
+									<strong>Support:</strong> +1 555 5555{" "}
+								</Typography>
+							</Stack>
+						</Stack>
 
-					<Stack spacing={"1.5rem"}>
-						<Typography
-							variant="h6"
-							color="inherit"
+						<Stack spacing={"1.5rem"}>
+							<Typography
+								variant="h6"
+								color="inherit"
+							>
+								Sitemap
+							</Typography>
+							<Stack spacing={"0.5rem"}>
+								{Views.map((link, id) => (
+									<Link
+										href={link.link}
+										color="inherit"
+										key={id}
+									>
+										{link.page}
+									</Link>
+								))}
+							</Stack>
+						</Stack>
+
+						<Stack spacing={"1.5rem"}>
+							<Typography
+								variant="h6"
+								color="inherit"
+							>
+								Legal
+							</Typography>
+							<Stack spacing={"0.5rem"}>
+								<Link color="inherit">Refund Policy</Link>
+								<Link color="inherit">Terms</Link>
+								<Link color="inherit">Privacy Policy</Link>
+								<Link color="inherit">Cookie notice</Link>
+							</Stack>
+						</Stack>
+
+						<Stack
+							spacing={"2rem"}
+							width={"23rem"}
 						>
-							Legal
-						</Typography>
-						<Link color="inherit">Refund Policy</Link>
-						<Link color="inherit">Terms</Link>
-						<Link color="inherit">Privacy Policy</Link>
-						<Link color="inherit">Cookie notice</Link>
+							<Stack spacing={"1rem"}>
+								<Typography
+									variant="h6"
+									color="inherit"
+								>
+									Newsletter
+								</Typography>
+								<Typography
+									variant="body1"
+									color="inherit"
+								>
+									Subscribe to our newsletter to get your weekly dose of news
+									updates, tips and special offers.
+								</Typography>
+							</Stack>
+							<Stack spacing={"1rem"}>
+								<TextField
+									prefix="sd"
+									variant="outlined"
+									label="Email"
+								/>
+
+								<Button
+									color={"secondary"}
+									size={"small"}
+									variant="contained"
+								>
+									Subscribe
+								</Button>
+							</Stack>
+						</Stack>
 					</Stack>
 				</Stack>
 			</Container>

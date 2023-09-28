@@ -110,6 +110,11 @@ const MainTheme = createTheme({
 				},
 			},
 		},
+		MuiLink: {
+			styleOverrides: {
+				root: { textTransform: 'capitalize' }
+			}
+		},
 		MuiButton: {
 			variants: [
 				{
@@ -122,7 +127,7 @@ const MainTheme = createTheme({
 				},
 			],
 			styleOverrides: {
-				root: { fontSize: '1.125rem', borderRadius: '0.5rem', paddingInline: '1.75rem', paddingBlock: '0.88rem', textTransform: 'none', fontFamily: poppins.style.fontFamily },
+				root: { textTransform: "capitalize", fontSize: '1.125rem', borderRadius: '0.5rem', paddingInline: '1.75rem', paddingBlock: '0.88rem', fontFamily: poppins.style.fontFamily },
 			},
 		},
 	},
