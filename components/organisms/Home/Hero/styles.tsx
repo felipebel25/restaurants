@@ -9,7 +9,9 @@ const STYLE: HeroStylesProps = {
   container: {
     gap: '6rem',
     alignItems: 'center',
-    overflow: 'visible'
+    overflow: 'visible',
+    backgroundImage:"url(/images/home/hero/01-background-hero.png)",
+    backgroundSize:"100%"
   },
 
   rating: {

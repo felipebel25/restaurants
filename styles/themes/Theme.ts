@@ -12,6 +12,7 @@ declare module "@mui/material/styles" {
 	// allow configuration using `createTheme`
 	interface PaletteOptions {
 		white?: PaletteOptions["primary"];
+		black?: PaletteOptions["primary"];
 	}
 }
 
@@ -55,6 +56,8 @@ const Typography: TypographyOptions = {
 const Pallete: PaletteOptions = {
 	mode: "light",
 	white: { main: "#FFFFFF", light: "#FFFFFF", contrastText: '#EC6533' },
+	// dark:{main:"#121212"},
+	black: { main:"#121212"},
 	text: { primary: '#111827' },
 	primary: {
 		main: "#EC6533",

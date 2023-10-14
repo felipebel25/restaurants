@@ -23,11 +23,11 @@ import TrackingImageRight from "public/images/home/tracking/screen3.png";
 export const homeText = {
 
   Hero: {
-    title: "Boost your restaurant’s online sales with",
+    title: <>Eleveate Your <br /> Dining Experience!</>,
     titleMinified: "Boost your restaurant with",
     titleAccent: "Eatsy Orders",
-    body: "Take back control of your online sales and save thousands of dollars on delivery apps like Uber Eats, Grubhub and Doordash",
-    ctaLabel: "Get a Free Demo",
+    body: <>Say Goodbye to Boring and static PDF Menus! <br />  Handle your orders, products, appereance in a single place.</>,
+    ctaLabel: "Start Now",
     reviewLabels: "Based on +10.000 reviews.",
     cover: {
       main: HeroCover,

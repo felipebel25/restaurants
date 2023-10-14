@@ -2,7 +2,6 @@ import Image from "next/image";
 import { FunctionComponent } from "react";
 
 import STYLE from "./styles";
-import css from "./styles.module.css";
 
 import { HomeSectionProps } from "@components/templates/Home/Home";
 import {
@@ -33,13 +32,15 @@ export const Hero: FunctionComponent<HomeSectionProps> = ({ phoneView }) => {
 				spacing={"3rem"}
 			>
 				<Typography
+					color="white"
+
 					variant="h1"
 					sx={{ textAlign: mediumView ? "center" : "left" }}
 				>
-					{mediumView ? homeText.Hero.titleMinified : homeText.Hero.title}{" "}
 					<span style={{ color: THEME.palette.primary.main }}>
 						{homeText.Hero.titleAccent}
-					</span>
+					</span><br />
+					{mediumView ? homeText.Hero.titleMinified : homeText.Hero.title}{" "}
 				</Typography>
 
 				{mediumView && (
@@ -52,6 +53,7 @@ export const Hero: FunctionComponent<HomeSectionProps> = ({ phoneView }) => {
 
 				<Typography
 					variant="h5"
+					color="white"
 					sx={{ fontWeight: 400 }}
 				>
 					{homeText.Hero.body}
@@ -68,7 +70,7 @@ export const Hero: FunctionComponent<HomeSectionProps> = ({ phoneView }) => {
 				>
 					{homeText.Hero.ctaLabel}
 				</Button>
-				<Box sx={STYLE.rating}>
+				{/* <Box sx={STYLE.rating}>
 					<Rating
 						name="read-only"
 						value={4.5}
@@ -81,16 +83,16 @@ export const Hero: FunctionComponent<HomeSectionProps> = ({ phoneView }) => {
 					>
 						{homeText.Hero.reviewLabels}
 					</Typography>
-				</Box>
+				</Box> */}
 			</Stack>
 
-			{!mediumView && (
+			{/* {!mediumView && (
 				<Image
 					style={{ width: "45%", height: "fit-content" }}
 					src={homeText.Hero.cover.main}
 					alt="Group28"
 				/>
-			)}
+			)} */}
 		</Stack>
 	);
 };

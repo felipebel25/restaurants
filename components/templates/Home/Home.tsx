@@ -24,7 +24,7 @@ export const HomeContent: FunctionComponent = ({}: HomeContentProps) => {
 
 	return (
 		<Box overflow={"hidden"}>
-			<Container maxWidth="lg">
+			<Container maxWidth="xl">
 				<Stack
 					spacing={"5rem"}
 					paddingY={"3.62rem"}

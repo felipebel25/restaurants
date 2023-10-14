@@ -6,18 +6,14 @@ import Kfc from "public/images/home/partners/kfc.png";
 import Wendys from "public/images/home/partners/wendys.png";
 import PapaJohns from "public/images/home/partners/papa-johns.png";
 import SubWay from "public/images/home/partners/subway.png";
+import { styles } from "./stylesPartnersRibbon";
 
 const PartnersRibbon: FunctionComponent<HomeSectionProps> = ({ phoneView }) => {
 	return (
-		<Box sx={{ backgroundColor: "#F3F4F6" }}>
+		<Box sx={styles.container}>
 			<Container maxWidth="xl">
 				<Stack
-					overflow={"hidden"}
-					gap={"1rem"}
-					direction={phoneView ? "column" : "row"}
-					justifyContent={"space-between"}
-					alignItems={"center"}
-					paddingY={phoneView ? "1rem" : "3rem"}
+					sx={styles.main}
 				>
 					<Image
 						src={Kfc}
