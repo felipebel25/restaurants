@@ -12,14 +12,18 @@ import SaveMoney from "@components/organisms/Home/Save-money/SaveMoney";
 import { TakeControl } from "@components/organisms/Home/Take-Control/TakeControl";
 import { Tracking } from "@components/organisms/Home/Tracking/Tracking";
 import { Container, useTheme } from "@mui/system";
+import { StopWasting } from "@components/organisms/Home/Stop-Wasting/StopWasting";
+import { SellingProducts } from "@components/organisms/Home/Selling-Products/SellingProducts";
+import { PersonalizeYour } from "@components/organisms/Home/Personalize-Your/PersonalizeYour";
 
-interface HomeContentProps {}
+interface HomeContentProps { }
 export interface HomeSectionProps {
 	phoneView: boolean;
 }
 
-export const HomeContent: FunctionComponent = ({}: HomeContentProps) => {
+export const HomeContent: FunctionComponent = ({ }: HomeContentProps) => {
 	const theme = useTheme();
+	// ?? what about this const
 	const phoneView = useMediaQuery(theme.breakpoints.down("sm"));
 
 	return (
@@ -31,8 +35,11 @@ export const HomeContent: FunctionComponent = ({}: HomeContentProps) => {
 				>
 					<Hero phoneView={phoneView} />
 					<PartnersRibbon phoneView={phoneView} />
-					<TakeControl phoneView={phoneView} />
-					<SaveMoney phoneView={phoneView} />
+					<StopWasting />
+					<SellingProducts />
+					<PersonalizeYour />
+					{/* <TakeControl phoneView={phoneView} /> */}
+					{/* <SaveMoney phoneView={phoneView} /> */}
 					<Features phoneView={phoneView} />
 					<AddImage phoneView={phoneView} />
 					<Tracking phoneView={phoneView} />

@@ -26,7 +26,7 @@ declare module "@mui/material/Button" {
 const Typography: TypographyOptions = {
 	fontFamily: poppins.style.fontFamily,
 	allVariants: {
-		color: '#111827'
+		color: '#FAFAFA'
 	},
 	h1: {
 		fontFamily: montserrat.style.fontFamily, fontWeight: 800,
@@ -35,7 +35,7 @@ const Typography: TypographyOptions = {
 	},
 	h2: { fontFamily: montserrat.style.fontFamily, fontWeight: 800, fontSize: '3rem' },
 	h3: { fontFamily: montserrat.style.fontFamily, fontWeight: 700, fontSize: '2.25rem' },
-	h4: { fontWeight: 700, fontSize: '2rem' },
+	h4: { fontWeight: 400, fontSize: '2rem' },
 	h5: { fontWeight: 600, fontSize: '1.5rem' },
 	h6: { fontWeight: 600, fontSize: '1.125rem' },
 	subtitle1: { fontWeight: 500, fontSize: '1rem' },
@@ -57,7 +57,7 @@ const Pallete: PaletteOptions = {
 	mode: "light",
 	white: { main: "#FFFFFF", light: "#FFFFFF", contrastText: '#EC6533' },
 	// dark:{main:"#121212"},
-	black: { main:"#121212"},
+	black: { main: "#121212" },
 	text: { primary: '#111827' },
 	primary: {
 		main: "#EC6533",

@@ -3,8 +3,6 @@ export const styles = {
         backgroundColor:"black.main",
         border:"1px solid #EBEBEB",
         borderRadius: "12px"
-
-
     },
     main: {
         overflow: "hidden",

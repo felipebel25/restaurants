@@ -5,9 +5,7 @@ import STYLE from "./styles";
 
 import { HomeSectionProps } from "@components/templates/Home/Home";
 import {
-	Box,
 	Button,
-	Rating,
 	Stack,
 	Typography,
 	useMediaQuery,
@@ -33,13 +31,12 @@ export const Hero: FunctionComponent<HomeSectionProps> = ({ phoneView }) => {
 			>
 				<Typography
 					color="white"
-
 					variant="h1"
-					sx={{ textAlign: mediumView ? "center" : "left" }}
+					sx={STYLE.title}
 				>
-					<span style={{ color: THEME.palette.primary.main }}>
+					<strong >
 						{homeText.Hero.titleAccent}
-					</span><br />
+					</strong><br />
 					{mediumView ? homeText.Hero.titleMinified : homeText.Hero.title}{" "}
 				</Typography>
 

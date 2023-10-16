@@ -18,6 +18,7 @@ import AddImagesMain from 'public/images/home/add-images/cover.png';
 import TrackingImageLeft from "public/images/home/tracking/screen1.png";
 import TrackingImageMiddle from "public/images/home/tracking/screen2.png";
 import TrackingImageRight from "public/images/home/tracking/screen3.png";
+import { Bold } from "@components/atoms/Bold/Bold";
 
 
 export const homeText = {
@@ -34,7 +35,15 @@ export const homeText = {
       phone: HeroCoverPhone
     }
   },
+  StopWasting: {
+    title: <>Stop wasting<br/> <strong>time and money</strong> with<br /> printed or PDF menus.</>,
+    body: "Whether your menu changes or prices need to be updated you are stuck into the same format that is already printed up. This implies new costs and most importantly time that you should be using to attend your clients."
 
+  },
+  SellingProducts:{
+    title:<>Selling your products was never<br /> this <Bold>Easy</Bold>!</>,
+    body:"Welcome to the future of dining out! Introducing our cutting-edge restaurant menu and product app, your gateway to a culinary adventure like no other."
+  },
   TakeControl: {
     title: "Take Back",
     titleAccent: "Control",
