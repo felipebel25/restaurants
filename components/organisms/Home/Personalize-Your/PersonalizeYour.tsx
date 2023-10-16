@@ -3,6 +3,7 @@ import { styles } from "./stylesPersonalizeYour"
 import { Typography } from "@mui/material"
 import { Bold } from "@components/atoms/Bold/Bold"
 import Image from "next/image"
+import { homeText } from "lang/english/homeCopy"
 
 export const PersonalizeYour = () => {
     return (
@@ -19,8 +20,10 @@ export const PersonalizeYour = () => {
                             component="h4"
                             variant="h4"
                             sx={styles.titleText}
-                        >Personalize Your <br /><Bold>Culinary Journey</Bold></Typography>
-                        <Typography>With <strong>Eatsy Orders</strong>, you have the opportunity to curate a special collection that showcases your culinary expertise as recommendation for your customers. </Typography>
+                        >
+                            {homeText.PersonalizeYour.title}
+                        </Typography>
+                        <Typography>{homeText.PersonalizeYour.body}</Typography>
 
                     </Box>
                 </Box>

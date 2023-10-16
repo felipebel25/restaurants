@@ -1,4 +1,4 @@
-import { Edit, EventAvailableRounded, GridViewRounded } from "@mui/icons-material";
+import { Edit, EventAvailableRounded, Facebook, GridViewRounded, Instagram, WhatsApp } from "@mui/icons-material";
 
 //Hero
 import HeroCover from "public/PNG/Group28.png";
@@ -36,13 +36,49 @@ export const homeText = {
     }
   },
   StopWasting: {
-    title: <>Stop wasting<br/> <strong>time and money</strong> with<br /> printed or PDF menus.</>,
+    title: <>Stop wasting<br /> <strong>time and money</strong> with<br /> printed or PDF menus.</>,
     body: "Whether your menu changes or prices need to be updated you are stuck into the same format that is already printed up. This implies new costs and most importantly time that you should be using to attend your clients."
 
   },
-  SellingProducts:{
-    title:<>Selling your products was never<br /> this <Bold>Easy</Bold>!</>,
-    body:"Welcome to the future of dining out! Introducing our cutting-edge restaurant menu and product app, your gateway to a culinary adventure like no other."
+  SellingProducts: {
+    title: <>Selling your products was never<br /> this <Bold>Easy</Bold>!</>,
+    body: "Welcome to the future of dining out! Introducing our cutting-edge restaurant menu and product app, your gateway to a culinary adventure like no other."
+  },
+
+  FrictionAccess: {
+    title: <>Frictionless access to <br />
+      your <Bold>Products</Bold></>,
+    body: "Onsite Menu transforms the way you explore our menu. Immerse yourself in a mouthwatering visual journey with high-definition images of every dish. Swipe, pinch, and zoom to get up close and personal with your next culinary delight."
+  },
+  PersonalizeYour: {
+    title: <>Personalize Your <br /><Bold>Culinary Journey</Bold></>,
+    body: <>With <strong>Eatsy Orders</strong>, you have the opportunity to curate a special collection that showcases your culinary expertise as recommendation for your customers.</>
+  },
+  BuildBrand: {
+    title: <>Build Your <Bold>Brand</Bold></>,
+    body: "Eatsy empowers your brand by providing you with the ability to customize how your customers perceive and engage with your products. We are here to empower your brand, the platform is yours.",
+    ctaLabel: "Start Now"
+  },
+  CentralizePresence: {
+    title: <>Centralize Your <Bold>Online Presence</Bold></>,
+    body: "With Eatsy, you can effortlessly centralize and optimize your social media presence, making it easier than ever to connect with your audience and drive traffic to your social platforms.",
+    cards: [
+      {
+        id: 123,
+        title: '@McDonaldsUSA',
+        image: <Instagram />,
+      },
+      {
+        id: 124,
+        title: '@McDonaldsUSA',
+        image: <WhatsApp />
+      },
+      {
+        id: 125,
+        title: '@McDonaldsUSA',
+        image: <Facebook />
+      }
+    ]
   },
   TakeControl: {
     title: "Take Back",

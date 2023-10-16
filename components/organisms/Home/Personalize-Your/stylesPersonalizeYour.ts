@@ -2,9 +2,7 @@ export const styles = {
     main: {
         height: "39.18rem",
         width: "100%",
-        backgroundSize: "47%",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+
     },
     container: {
         height: "100%",
