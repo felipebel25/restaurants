@@ -18,6 +18,8 @@ import { PersonalizeYour } from "@components/organisms/Home/Personalize-Your/Per
 import { FrictionAccess } from "@components/organisms/Home/Frictionless-Access/FrictionAccess";
 import { BuildBrand } from "@components/organisms/Home/Build-Brand/BuildBrand";
 import { CentralizePresence } from "@components/organisms/Home/Centralize-Presence/CentralizePresence";
+import { Management } from "@components/organisms/Home/Managament/Management";
+import { SlidesSection } from "@components/organisms/Home/Slides-Section/SlidesSection";
 
 interface HomeContentProps { }
 export interface HomeSectionProps {
@@ -44,6 +46,8 @@ export const HomeContent: FunctionComponent = ({ }: HomeContentProps) => {
 					<FrictionAccess />
 					<BuildBrand />
 					<CentralizePresence />
+					<Management />
+					<SlidesSection />
 					{/* <TakeControl phoneView={phoneView} /> */}
 					{/* <SaveMoney phoneView={phoneView} /> */}
 					<Features phoneView={phoneView} />

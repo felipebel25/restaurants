@@ -109,3 +109,18 @@ a {
 		color-scheme: dark;
 	}
 }
+
+
+
+.alice-carousel__stage-item{
+	vertical-align:0 !important;
+
+}
+
+.alice-carousel__stage-item{
+	margin-top: 4.5rem !important;
+}
+.alice-carousel__stage-item __active __target{
+	margin-top: 4.5rem !important;
+
+}

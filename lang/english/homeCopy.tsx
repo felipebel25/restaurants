@@ -80,6 +80,10 @@ export const homeText = {
       }
     ]
   },
+  Management:{
+    title: <>All your <Bold>management</Bold> in a single place</>,
+    body: <>With <strong>Eatsy Orders Admin</strong>, you can streamline your business management without the need for multiple platforms. In one convenient dashboard accessible through your web browser, you have full control over your products, employees, locations, branding, and so much more!.</>
+  },
   TakeControl: {
     title: "Take Back",
     titleAccent: "Control",
