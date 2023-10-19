@@ -37,6 +37,7 @@
     "react-alice-carousel": "^2.8.0",
     "react-dom": "18.2.0",
     "react-swipeable-views": "^0.14.0",
+    "sharp": "^0.32.6",
     "typescript": "4.9.4"
   }
 }

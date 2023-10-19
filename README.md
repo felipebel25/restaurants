@@ -18,3 +18,6 @@ If you want to learn more about creating good readme files then refer the follow
 - [ASP.NET Core](https://github.com/aspnet/Home)
 - [Visual Studio Code](https://github.com/Microsoft/vscode)
 - [Chakra Core](https://github.com/Microsoft/ChakraCore)
+
+I added sharp because show us this error 
+[https://nextjs.org/docs/messages/sharp-missing-in-production](https://nextjs.org/docs/messages/sharp-missing-in-production)

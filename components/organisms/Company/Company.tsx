@@ -11,7 +11,7 @@ import { CardSections } from "@components/molecules/Company/CardSections/CardSec
 import { Categories } from "@components/molecules/Company/Categories/Categories";
 
 import { Eatsyproduct } from "@components/molecules/Plans/EatsyPro/EatsyProduct";
-import ClientOpinions from "../Home/Client-Opinions/ClientOpinions";
+import { ClientOpinions } from "../Home/Client-Opinions/ClientOpinions";
 
 interface CompanyContentProps {}
 
@@ -65,7 +65,7 @@ export const CompanyContent: FunctionComponent = ({}: CompanyContentProps) => {
 						btnColor="#EC6533"
 					/>
 
-					<ClientOpinions phoneView={phoneSize} />
+					<ClientOpinions />
 				</Stack>
 			</Container>
 		</Box>
