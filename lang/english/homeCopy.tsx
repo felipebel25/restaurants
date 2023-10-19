@@ -48,7 +48,10 @@ export const homeText = {
   FrictionAccess: {
     title: <>Frictionless access to <br />
       your <Bold>Products</Bold></>,
-    body: "Onsite Menu transforms the way you explore our menu. Immerse yourself in a mouthwatering visual journey with high-definition images of every dish. Swipe, pinch, and zoom to get up close and personal with your next culinary delight."
+    body: "Onsite Menu transforms the way you explore our menu. Immerse yourself in a mouthwatering visual journey with high-definition images of every dish. Swipe, pinch, and zoom to get up close and personal with your next culinary delight.",
+    cover: {
+      main: "/images/home/friction-access/01-friction-access.png"
+    }
   },
   PersonalizeYour: {
     title: <>Personalize Your <br /><Bold>Culinary Journey</Bold></>,
@@ -57,7 +60,10 @@ export const homeText = {
   BuildBrand: {
     title: <>Build Your <Bold>Brand</Bold></>,
     body: "Eatsy empowers your brand by providing you with the ability to customize how your customers perceive and engage with your products. We are here to empower your brand, the platform is yours.",
-    ctaLabel: "Start Now"
+    ctaLabel: "Start Now",
+    cover: {
+      main: "/images/home/build-brand/01-build-brand.png"
+    }
   },
   CentralizePresence: {
     title: <>Centralize Your <Bold>Online Presence</Bold></>,
@@ -80,9 +86,74 @@ export const homeText = {
       }
     ]
   },
-  Management:{
+  Management: {
     title: <>All your <Bold>management</Bold> in a single place</>,
-    body: <>With <strong>Eatsy Orders Admin</strong>, you can streamline your business management without the need for multiple platforms. In one convenient dashboard accessible through your web browser, you have full control over your products, employees, locations, branding, and so much more!.</>
+    body: <>With <strong>Eatsy Orders Admin</strong>, you can streamline your business management without the need for multiple platforms. In one convenient dashboard accessible through your web browser, you have full control over your products, employees, locations, branding, and so much more!.</>,
+    cover:{
+      main:"/images/home/management/01-management.png"
+    }
+  },
+  SlidesSection: {
+    card: [
+      {
+        title: <>
+          Your Ultimate<br />
+          Order Management  <br />
+          <Bold>Solution</Bold>
+        </>,
+        description: "Eatsy Orders streamlines all your orders in one convenient platform, whether they originate from inside your restaurant or your clients' homes.",
+        image: '/images/home/slides/01-ultimate-order.png',
+        altImage: "Order Management"
+      },
+
+      {
+        title: <>
+          <Bold>Real-Time</Bold> <br />
+          Updates
+        </>,
+        description: "Update your menus in real-time, whether<br /> it&apos;s seasonal specials, limited-time offers, or ingredient substitutions.",
+        image: '/images/home/slides/02-real-time.png',
+        altImage: "Real-Time Updates"
+      },
+      {
+        title: <>
+          <Bold>Interactive</Bold> Dining<br />
+          Experience
+        </>,
+        description: "Engage your customers like never before with our interactive dining experience. With Eatsy Orders - Onsite Menu™ , your patrons can explore high-definition images, dish descriptions, allergen information, all at their fingertips.",
+        image: '/images/home/slides/03-interactive.png',
+        altImage: "Interactive Dining Experience"
+      },
+      {
+        title: <>
+          <Bold>Personalization</Bold> &<br />
+          Recommendations
+        </>,
+        description: "Boost customer satisfaction with our personalized recommendations. Eatsy Orders allows you to create guided flows, allowing you to tailor suggestions based on their actions on your menu.",
+        image: '/images/home/slides/04-personalization.png',
+        altImage: "Personalization & Recommendations"
+      },
+    ]
+  },
+  FAQ: {
+    title: 'FAQ',
+    cards: [
+      {
+        id: "FAQ-what",
+        title: <>What is <Bold>Eatsy.com?</Bold></>,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendiss malesuada lacus ex, sit amet blandit leo lobortis eget."
+      },
+      {
+        id: "FAQ-how",
+        title: <>How to contact us?</>,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendiss malesuada lacus ex, sit amet blandit leo lobortis eget."
+      },
+      {
+        id: "FAQ-benefits",
+        title: <>What are the benefits of the application?</>,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendiss malesuada lacus ex, sit amet blandit leo lobortis eget."
+      },
+    ]
   },
   TakeControl: {
     title: "Take Back",
@@ -154,8 +225,14 @@ export const homeText = {
   },
 
   Reviews: {
-    title: "Our clients think",
+    title: <>What <strong>Restaurants</strong> say</>,
     users: [
+      {
+        name: "Romina Beltran",
+        position: "Restaurant manager",
+        review: "Lorem ipsum dolor sit amet, consectetuer ag ka elit, lu sed diam nonummy nibh euismod amet tincidunt. Lorem ipsum dolor sit amet, consectetuer adipiscing elit diam.",
+        profilePicture: ''
+      },
       {
         name: "Romina Beltran",
         position: "Restaurant manager",
@@ -176,7 +253,5 @@ export const homeText = {
     description: 'Eatsy Orders is an all-in-one platform. Our mission is to provide the technology that helps small and medium-sized restaurants to take control of their customers and online sales.',
     ctaLabel: 'Get a Free Demo',
   }
-
-
 
 }

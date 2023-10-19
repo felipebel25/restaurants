@@ -44,11 +44,10 @@ export const BuildBrand = () => {
                 >
                     <Image
                         alt='Build Your Brand with Eatsy Orders, Mockup of Eatsy Orders'
-                        src="/images/home/build-brand/01-build-brand.png"
+                        src={homeText.BuildBrand.cover.main}
                         width={610}
                         height={607}
                     />
-
                 </Box>
             </Container>
         </Box>

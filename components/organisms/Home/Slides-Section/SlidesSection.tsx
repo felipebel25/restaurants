@@ -1,10 +1,12 @@
-import { Bold } from '@components/atoms/Bold/Bold';
-import { SlideHome } from '@components/molecules/SlideHome/SlideHome';
-import { Typography } from '@mui/material';
-import AliceCarousel from 'react-alice-carousel';
 import Image from 'next/image';
+import AliceCarousel from 'react-alice-carousel';
 import { Box } from '@mui/system';
+
+import { Typography } from '@mui/material';
+import { SlideHome } from '@components/molecules/SlideHome/SlideHome';
 import 'react-alice-carousel/lib/alice-carousel.css';
+
+import { homeText } from 'lang/english/homeCopy';
 import { styles } from './stylesSlidesSection';
 
 
@@ -17,22 +19,18 @@ const items = [
                 variant='h4'
                 sx={styles.title}
             >
-                Your Ultimate<br />
-                Order Management  <br />
-                <Bold>Solution</Bold>
+                {homeText.SlidesSection.card[0].title}
             </Typography>}
 
-        Body={<Typography>Engage your customers like never before with our interactive dining experience. With Eatsy Orders - Onsite Menu™ , your patrons can explore high-definition images, dish descriptions, allergen information, all at their fingertips.</Typography>}
+        Body={<Typography>{homeText.SlidesSection.card[0].description}</Typography>}
         Image={
             <Image
-                alt='Order Management'
-                src='/images/home/slides/01-ultimate-order.png'
+                alt={homeText.SlidesSection.card[0].altImage}
+                src={homeText.SlidesSection.card[0].image}
                 width={662}
                 height={662}
                 quality={100}
                 style={{ position: "relative", top: "-11rem" }}
-
-
             />
         }
     />,
@@ -44,19 +42,17 @@ const items = [
                 variant='h4'
                 sx={styles.title}
             >
-                <Bold>Real-Time</Bold> <br />
-                Updates
+                {homeText.SlidesSection.card[1].title}
             </Typography>}
 
-        Body={<Typography>Update your menus in real-time, whether<br /> it&apos;s seasonal specials, limited-time offers, or ingredient substitutions.</Typography>}
+        Body={<Typography>{homeText.SlidesSection.card[1].description}</Typography>}
         Image={
             <Image
-                alt='Order Management'
-                src='/images/home/slides/02-real-time.png'
+                alt={homeText.SlidesSection.card[1].altImage}
+                src={homeText.SlidesSection.card[1].image}
                 width={804}
                 height={632}
                 style={{ position: "relative", top: "-7rem", margin: "0 auto" }}
-
             />
         }
     />,
@@ -68,19 +64,17 @@ const items = [
                 variant='h4'
                 sx={styles.title}
             >
-                <Bold>Interactive</Bold> Dining<br />
-                Experience
+                {homeText.SlidesSection.card[2].title}
             </Typography>}
 
-        Body={<Typography>Engage your customers like never before with our interactive dining experience. With Eatsy Orders - Onsite Menu™ , your patrons can explore high-definition images, dish descriptions, allergen information, all at their fingertips.</Typography>}
+        Body={<Typography>{homeText.SlidesSection.card[2].description}</Typography>}
         Image={
             <Image
-                alt='Order Management'
-                src='/images/home/slides/03-interactive.png'
+                alt={homeText.SlidesSection.card[2].altImage}
+                src={homeText.SlidesSection.card[2].image}
                 width={336}
                 height={510}
                 style={{ position: "relative", top: "-5.7rem" }}
-
             />
         }
     />,
@@ -92,55 +86,31 @@ const items = [
                 variant='h4'
                 sx={styles.title}
             >
-                <Bold>Personalization</Bold> &<br />
-                Recommendations
+                {homeText.SlidesSection.card[3].title}
             </Typography>}
 
-        Body={<Typography>Boost customer satisfaction with our personalized recommendations. Eatsy Orders allows you to create guided flows, allowing you to tailor suggestions based on their actions on your menu.</Typography>}
+        Body={<Typography>{homeText.SlidesSection.card[3].description}</Typography>}
         Image={
             <Image
-                alt='Order Management'
-                src='/images/home/slides/04-personalization.png'
+                alt={homeText.SlidesSection.card[3].altImage}
+                src={homeText.SlidesSection.card[3].image}
                 width={416}
                 height={540}
                 style={{ position: "relative", top: "-5.7rem" }}
-
             />
         }
-
     />,
 ];
 export const SlidesSection = () => {
     return (
-        <Box style={{ width: "100%", height: "100%", display: "flex", alignItems: "center" }}>
-            <AliceCarousel autoPlay autoPlayInterval={2000} infinite disableButtonsControls items={items} />
-            {/* <SlideHome
-                key="slide-home-01"
-                Title={
-                    <Typography
-                        component="h4"
-                        variant='h4'
-                        sx={styles.title}
-                    >
-                        Your Ultimate<br />
-                        Order Management  <br />
-                        <Bold>Solution</Bold>
-                    </Typography>}
-
-                Body={<Typography>Engage your customers like never before with our interactive dining experience. With Eatsy Orders - Onsite Menu™ , your patrons can explore high-definition images, dish descriptions, allergen information, all at their fingertips.</Typography>}
-                Image={
-                    <Image
-                        alt='Order Management'
-                        src='/images/home/slides/01-ultimate-order.png'
-                        width={632}
-                        height={632}
-                        quality={100}
-                        style={{ position: "relative", bottom:"21rem" }}
-
-
-                    />
-                }
-            /> */}
+        <Box sx={styles.main}>
+            <AliceCarousel
+                autoPlay
+                autoPlayInterval={2000}
+                infinite
+                disableButtonsControls
+                items={items}
+            />
         </Box>
     )
 }

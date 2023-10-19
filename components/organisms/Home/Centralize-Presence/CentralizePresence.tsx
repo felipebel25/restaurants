@@ -1,4 +1,5 @@
 import { Box, Container } from "@mui/system"
+
 import { Typography } from "@mui/material"
 import { CardSocialNetworks } from "@components/atoms/Card-SocialNetworks/CardSocialNetworks"
 import { homeText } from "lang/english/homeCopy"

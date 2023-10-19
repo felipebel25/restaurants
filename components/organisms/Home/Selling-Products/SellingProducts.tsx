@@ -12,8 +12,14 @@ export const SellingProducts = () => {
             sx={styles.main} >
             <Container maxWidth="xl"
                 sx={styles.container}>
-                <Box component="article" sx={styles.textSection}>
-                    <Typography component="h4" variant="h4" sx={styles.title}>{homeText.SellingProducts.title}</Typography>
+                <Box
+                    component="article"
+                    sx={styles.textSection}>
+                    <Typography
+                        component="h4"
+                        variant="h4"
+                        sx={styles.title}
+                    >{homeText.SellingProducts.title}</Typography>
                     <Typography>{homeText.SellingProducts.body}</Typography>
                 </Box>
             </Container>

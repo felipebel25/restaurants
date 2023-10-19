@@ -34,7 +34,7 @@ export const FrictionAccess = () => {
                 >
                     <Image
                         alt="Mockup Eatsy Orders, Frictionless access to your products"
-                        src="/images/home/friction-access/01-friction-access.png"
+                        src={homeText.FrictionAccess.cover.main}
                         width={1380}
                         height={750}
                     />

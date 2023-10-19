@@ -20,7 +20,7 @@ export const Management = () => {
                 >
                     <Image
                         alt="Admin Panel Eatsy Orders, Management your business"
-                        src="/images/home/management/01-management.png"
+                        src={homeText.Management.cover.main}
                         width={542}
                         height={474}
                     />

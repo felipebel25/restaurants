@@ -1,9 +1,10 @@
-import { Box, Container } from "@mui/system"
-import { styles } from "./stylesPersonalizeYour"
-import { Typography } from "@mui/material"
-import { Bold } from "@components/atoms/Bold/Bold"
 import Image from "next/image"
+import { Box, Container } from "@mui/system"
+import { Typography } from "@mui/material"
+
 import { homeText } from "lang/english/homeCopy"
+
+import { styles } from "./stylesPersonalizeYour"
 
 export const PersonalizeYour = () => {
     return (

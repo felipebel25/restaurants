@@ -30,7 +30,7 @@ const CardUser: FunctionComponent<CardUserProps> = ({
 					<Box sx={STYLE.head}>
 						<Box sx={STYLE.img_user}>
 							<Image
-								width={130}
+								width={65}
 								src={image || user}
 								alt="User"
 							/>
