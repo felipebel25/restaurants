@@ -13,9 +13,9 @@ import { Categories } from "@components/molecules/Company/Categories/Categories"
 import { Eatsyproduct } from "@components/molecules/Plans/EatsyPro/EatsyProduct";
 import { ClientOpinions } from "../Home/Client-Opinions/ClientOpinions";
 
-interface CompanyContentProps {}
+interface CompanyContentProps { }
 
-export const CompanyContent: FunctionComponent = ({}: CompanyContentProps) => {
+export const CompanyContent: FunctionComponent = ({ }: CompanyContentProps) => {
 	const theme = useTheme();
 	const FirstList = [
 		"Relevant feature",
@@ -65,7 +65,9 @@ export const CompanyContent: FunctionComponent = ({}: CompanyContentProps) => {
 						btnColor="#EC6533"
 					/>
 
-					<ClientOpinions />
+					<ClientOpinions
+						phoneView={phoneSize}
+					/>
 				</Stack>
 			</Container>
 		</Box>
