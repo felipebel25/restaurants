@@ -5,24 +5,26 @@ export const styles = {
     },
     container: {
         height: "100%",
-        display: "flex"
+        display: "flex",
+        flexDirection: { xs: "column", md: "row" },
     },
     sectionImage: {
-        // border: "1px solid red",
-        width: "54%",
+        width: { xs: "100%", md: "54%" },
         display: "flex",
         alignItems: "center",
-        justifyContent: "flex-end",
-        mr:"4rem"
+        justifyContent: { xs: "center", md: "flex-end" },
+        mr: { xs: "0", md: "4rem" }
     },
     sectionText: {
-        // border: "1px solid red",
-        width: "21rem",
+        width: { xs: "100%", md: "21rem" },
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        textAlign: { xs: "center", md: "left" }
     },
     title: {
-        mb: "1.5rem"
+        mb: "1.5rem",
+        fontWeight: { xs: 600, md: 400 },
+
     }
 }

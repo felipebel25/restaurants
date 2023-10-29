@@ -4,7 +4,7 @@ export const styles = {
         height: "auto",
     },
     container: {
-        width: "80%",
+        width: { xs: "100%", md: "80%" },
         height: "auto",
         display: "flex",
         flexDirection: "column",

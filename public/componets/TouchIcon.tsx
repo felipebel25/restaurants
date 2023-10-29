@@ -1,6 +1,9 @@
 
-export const TouchIcon = () => (
-    <svg width={80} height={80} viewBox="0 0 80 80" style={{ marginLeft: "-1rem" }} fill="none" xmlns="http://www.w3.org/2000/svg">
+interface Props {
+    styles?: any;
+}
+export const TouchIcon = ({ styles = {} }: Props) => (
+    <svg width={80} height={80} viewBox="0 0 80 80" style={{ marginLeft: "-1rem" , ...styles }} fill="none" xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_d_2428_30091)">
             <rect x={16} y={9} width="53.1489" height="53.5546" rx="10.2531" fill="#47C97B" />
         </g>

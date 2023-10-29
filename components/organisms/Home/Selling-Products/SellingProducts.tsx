@@ -1,5 +1,6 @@
 import { Box, Container } from "@mui/system"
 import { Typography } from "@mui/material"
+import { useInView } from "react-hook-inview"
 
 import { homeText } from "lang/english/homeCopy"
 
@@ -7,9 +8,15 @@ import { styles } from "./stylesSellingProducts"
 
 
 export const SellingProducts = () => {
+    const [ref, inView] = useInView({ unobserveOnEnter: true })
+    const validateAnimation = inView ? 'animate__animated animate__fadeInRight animate__slow' : ""
     return (
-        <Box component="section"
-            sx={styles.main} >
+        <Box
+            component="section"
+            sx={styles.main}
+            ref={ref}
+            className={validateAnimation}
+        >
             <Container maxWidth="xl"
                 sx={styles.container}>
                 <Box

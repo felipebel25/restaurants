@@ -24,10 +24,10 @@ import { Bold } from "@components/atoms/Bold/Bold";
 export const homeText = {
 
   Hero: {
-    title: <>Eleveate Your <br /> Dining Experience!</>,
+    title: <>Elevate Your <br /> Dining Experience!</>,
     titleMinified: "Boost your restaurant with",
     titleAccent: "Eatsy Orders",
-    body: <>Say Goodbye to Boring and static PDF Menus! <br />  Handle your orders, products, appereance in a single place.</>,
+    body: <>Say Goodbye to Boring and static PDF Menus! <br />  Handle your orders, products, appereance in a<br /> single place.</>,
     ctaLabel: "Start Now",
     reviewLabels: "Based on +10.000 reviews.",
     cover: {
@@ -36,7 +36,7 @@ export const homeText = {
     }
   },
   StopWasting: {
-    title: <>Stop wasting<br /> <strong>time and money</strong> with<br /> printed or PDF menus.</>,
+    title: <>Stop wasting<br /> <Bold>time and money</Bold> with<br /> printed or PDF menus.</>,
     body: "Whether your menu changes or prices need to be updated you are stuck into the same format that is already printed up. This implies new costs and most importantly time that you should be using to attend your clients."
 
   },
@@ -51,7 +51,24 @@ export const homeText = {
     body: "Onsite Menu transforms the way you explore our menu. Immerse yourself in a mouthwatering visual journey with high-definition images of every dish. Swipe, pinch, and zoom to get up close and personal with your next culinary delight.",
     cover: {
       main: "/images/home/friction-access/01-friction-access.png"
-    }
+    },
+    cards: [
+      {
+        id: 1,
+        title: <>Keep prices and your on-site menu always Update</>,
+        description: "Our technology works so that your site not only looks beautiful, it reduces the clicks a customer has to make so that ordering food online at your restaurant is as easy as on any platform."
+      },
+      {
+        id: 2,
+        title: <>Professional and easy-to-use</>,
+        description: "Our technology works so that your site not only looks beautiful, it reduces the clicks a customer has to make so that ordering food online at your restaurant is as easy as on any platform."
+      },
+      {
+        id: 3,
+        title: <>Save time managing all your information from one place.</>,
+        description: "Our technology works so that your site not only looks beautiful, it reduces the clicks a customer has to make so that ordering food online at your restaurant is as easy as on any platform."
+      },
+    ]
   },
   PersonalizeYour: {
     title: <>Personalize Your <br /><Bold>Culinary Journey</Bold></>,
@@ -89,8 +106,8 @@ export const homeText = {
   Management: {
     title: <>All your <Bold>management</Bold> in a single place</>,
     body: <>With <strong>Eatsy Orders Admin</strong>, you can streamline your business management without the need for multiple platforms. In one convenient dashboard accessible through your web browser, you have full control over your products, employees, locations, branding, and so much more!.</>,
-    cover:{
-      main:"/images/home/management/01-management.png"
+    cover: {
+      main: "/images/home/management/01-management.png"
     }
   },
   SlidesSection: {

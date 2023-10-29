@@ -1,15 +1,23 @@
 export const styles = {
-    container:{
-        backgroundColor:"black.main",
-        border:"1px solid #EBEBEB",
-        borderRadius: "12px"
+    container: {
+        backgroundColor: "black.main",
+        border: { xs: "none", md: "1px solid #EBEBEB" },
+        borderRadius: "12px",
+        display: "flex",
     },
     main: {
         overflow: "hidden",
-        gap: "1rem",
-        flexDirection: { xs: "column", md: "row" },
-        justifyContent: "space-between",
+        gap: { md: "1rem" },
+        flexDirection: "row",
+        justifyContent: { xs: "space-between", md: "space-between" },
         alignItems: "center",
-        paddingY: { xs: "1rem", md: "3rem" }
-    }
+        paddingY: { xs: "0.5rem", md: "3rem" },
+        '& img': {
+            cursor: "pointer",
+            '&:hover': {
+                filter: ' brightness(320%)'
+            }
+        }
+    },
+
 }

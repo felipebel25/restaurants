@@ -1,5 +1,4 @@
 import {
-	Fragment,
 	FunctionComponent,
 	JSXElementConstructor,
 	ReactElement,
@@ -14,11 +13,11 @@ interface MainLayoutProps {
 
 const MainLayout: FunctionComponent<MainLayoutProps> = ({ children }) => {
 	return (
-		<Fragment>
+		<>
 			<TopNavBar />
 			{children}
 			<Footer />
-		</Fragment>
+		</>
 	);
 }; //Closes MainLayout component
 

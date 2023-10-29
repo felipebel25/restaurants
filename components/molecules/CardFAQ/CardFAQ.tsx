@@ -1,17 +1,17 @@
+import { ReactElement } from "react"
 import { ExpandMore } from "@mui/icons-material"
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material"
-import { styles } from "./stylesCardFAQ"
-import { Bold } from "@components/atoms/Bold/Bold"
 import { Box } from "@mui/system"
-import { ReactElement } from "react"
 
+import { styles } from "./stylesCardFAQ"
 interface Props {
     title: ReactElement;
     description: string;
+    subDescription?: boolean;
 }
 
 
-export const CardFAQ = ({ title, description }: Props) => {
+export const CardFAQ = ({ title, description, subDescription = true }: Props) => {
     return (
         <Accordion sx={styles.accordion}>
             <AccordionSummary
@@ -25,7 +25,7 @@ export const CardFAQ = ({ title, description }: Props) => {
                         component="h6"
                         variant="h6"
                     >{title}</Typography>
-                    <Typography sx={styles.subTitle}>{description.slice(0, 35)}... </Typography>
+                    {subDescription && <Typography sx={styles.subTitle}>{description.slice(0, 35)}... </Typography>}
                 </Box>
             </AccordionSummary>
             <AccordionDetails>

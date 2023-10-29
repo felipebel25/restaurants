@@ -130,9 +130,16 @@ const MainTheme = createTheme({
 				},
 			],
 			styleOverrides: {
-				root: { textTransform: "capitalize", fontSize: '1.125rem', borderRadius: '0.5rem', paddingInline: '1.75rem', paddingBlock: '0.88rem', fontFamily: poppins.style.fontFamily },
+				root: { textTransform: "capitalize", fontSize: '1.125rem', borderRadius: '1rem', paddingInline: '1.75rem', paddingBlock: '0.88rem', fontFamily: poppins.style.fontFamily },
 			},
 		},
+		MuiPaper:{
+			styleOverrides:{
+				root:{
+					backgroundColor:"#232323"
+				}
+			}
+		}
 	},
 }); //Closes Theme
 

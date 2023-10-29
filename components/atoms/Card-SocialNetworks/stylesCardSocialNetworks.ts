@@ -1,6 +1,6 @@
 export const styles = {
     card: {
-        width: "37.5rem",
+        width: { xs: "100%", md: "37.5rem" },
         display: "flex",
         alignItems: "center",
         backgroundColor: "#1D1D1D",

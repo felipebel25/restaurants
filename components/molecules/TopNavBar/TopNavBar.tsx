@@ -9,7 +9,6 @@ import {
 	MenuItem,
 	Stack,
 	Toolbar,
-	Typography,
 	Link,
 	useMediaQuery,
 	useTheme,
@@ -20,11 +19,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { motion } from "framer-motion";
 import { User, EatsyLogo } from "@icons/index";
 import Views from "pages/api/Views";
+import { styles } from "./stylesTopNavBar";
+import { useRouter } from "next/router";
 
-interface TopNavBarProps {}
+interface TopNavBarProps { }
 
 const TopNavBar: FunctionComponent<TopNavBarProps> = () => {
 	const theme = useTheme();
+	const { asPath } = useRouter()
 	const xsBP = useMediaQuery("(min-width:600px)");
 	const MotionAppBar = motion(AppBar);
 	const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -52,23 +54,17 @@ const TopNavBar: FunctionComponent<TopNavBarProps> = () => {
 			<MotionAppBar
 				elevation={0}
 				position="sticky"
-				className={`${theme.palette.mode}-textured-bg`}
+				className={`light-textured-bg`}
 			>
 				<Container
 					maxWidth="xl"
 					component={"nav"}
 				>
 					<Toolbar
-						sx={{
-							justifyContent: { lg: "flex-start", xs: "space-between" },
-							gap: "4.375rem",
-							py: "1rem",
-						}}
+						sx={styles.toolBar}
 					>
 						<EatsyLogo size={"4.7rem"} />
-
 						{/*/////////// Desktop////////////////*/}
-
 						<Stack
 							flex={1}
 							direction={"row"}
@@ -123,9 +119,7 @@ const TopNavBar: FunctionComponent<TopNavBarProps> = () => {
 								Get a Free demo!
 							</Button>
 						</Stack>
-
 						{/*/////////// Mobile////////////////*/}
-
 						<Box sx={{ display: { xs: "flex", lg: "none" } }}>
 							<IconButton
 								size="small"
@@ -147,23 +141,26 @@ const TopNavBar: FunctionComponent<TopNavBarProps> = () => {
 								}}
 								open={Boolean(anchorElNav)}
 								onClose={handleCloseNavMenu}
-								sx={{
-									display: { xs: "block", lg: "none" },
-								}}
+								sx={styles.menu}
 							>
 								{Views.map((link, id) => (
 									<MenuItem
-										key={id}
+										key={`${id} ${link.link}`}
 										onClick={handleCloseNavMenu}
+										sx={asPath === link.link ? styles.menuItemActive : styles.menuItem}
 									>
 										<Link
-											color="secondary"
 											href={link.link}
 										>
 											{link.page}
 										</Link>
 									</MenuItem>
-								))}
+								)
+								)}
+								<Button
+									variant="contained"
+									sx={styles.button}
+								>Get a free demo!</Button>
 							</Menu>
 						</Box>
 					</Toolbar>

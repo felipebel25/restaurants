@@ -1,95 +1,64 @@
-import Image from "next/image";
 import { FunctionComponent } from "react";
-
-import STYLE from "./styles";
 
 import { HomeSectionProps } from "@components/templates/Home/Home";
 import {
 	Button,
 	Stack,
 	Typography,
-	useMediaQuery,
-	useTheme,
 } from "@mui/material";
 import { homeText } from "lang/english/homeCopy";
 
-export const Hero: FunctionComponent<HomeSectionProps> = ({ phoneView }) => {
-	const THEME = useTheme();
-	const mediumView = useMediaQuery(THEME.breakpoints.down("md"));
+import STYLE from "./styles";
+import { Box } from "@mui/system";
+
+export const Hero: FunctionComponent<HomeSectionProps> = ({ }) => {
 
 	return (
 		<Stack
-			style={{
-				paddingBlock: mediumView ? "0rem" : "3.25rem",
-				flexDirection: phoneView ? "column-reverse" : "row",
-			}}
+			className='animate__animated animate__fadeInDown'
 			sx={STYLE.container}
 		>
-			<Stack
-				alignItems={mediumView ? "center" : "flex-start"}
-				spacing={"3rem"}
-			>
+			<Box sx={STYLE.sectionText}>
 				<Typography
 					color="white"
 					variant="h1"
+					component="h1"
 					sx={STYLE.title}
 				>
 					<strong >
 						{homeText.Hero.titleAccent}
 					</strong><br />
-					{mediumView ? homeText.Hero.titleMinified : homeText.Hero.title}{" "}
+					{homeText.Hero.title}
 				</Typography>
-
-				{mediumView && (
-					<Image
-						style={{ width: 300, height: "fit-content" }}
-						src={homeText.Hero.cover.phone}
-						alt="Group28"
-					/>
-				)}
-
 				<Typography
-					variant="h5"
 					color="white"
-					sx={{ fontWeight: 400 }}
+					sx={STYLE.description}
 				>
-					{homeText.Hero.body}
-				</Typography>
 
+
+					{homeText.Hero.body}
+
+				</Typography>
 				<Button
 					type="submit"
-					size="large"
+					size="small"
 					variant="contained"
-					sx={{
-						width: mediumView ? "100%" : "fit-content",
-						boxShadow: "0px 11px 17px 7px rgba(236, 101, 51, 0.29)",
-					}}
+					sx={STYLE.button}
 				>
 					{homeText.Hero.ctaLabel}
 				</Button>
-				{/* <Box sx={STYLE.rating}>
-					<Rating
-						name="read-only"
-						value={4.5}
-						precision={0.5}
-						readOnly
-					/>
-					<Typography
-						variant="body2"
-						sx={{ color: "#676767" }}
-					>
-						{homeText.Hero.reviewLabels}
-					</Typography>
-				</Box> */}
-			</Stack>
-
-			{/* {!mediumView && (
-				<Image
-					style={{ width: "45%", height: "fit-content" }}
-					src={homeText.Hero.cover.main}
-					alt="Group28"
+			</Box>
+			<Box sx={STYLE.sectionVideo}>
+				<video
+					autoPlay
+					loop
+					style={{ width: "100%" }}
+					muted
+					playsInline={true}
+					controls={false}
+					src="/videos/hero.mp4"
 				/>
-			)} */}
+			</Box>
 		</Stack>
 	);
 };

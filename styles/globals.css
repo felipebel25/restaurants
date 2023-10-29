@@ -74,8 +74,6 @@
 
 html,
 body {
-	background-color: rgb(243, 99, 2);
-
 }
 
 a {
@@ -95,8 +93,7 @@ a {
 
 
 .dark-textured-bg {
-
-	background: var(--texture-light-gradient,
+	background: var(
 			linear-gradient(96deg, rgba(0, 5, 11, 0.12) 0%, rgba(21, 24, 60, 0.19) 48.44%, rgba(63, 25, 86, 0.26) 100%),
 			url("/Texture Dark Tile.png") 0px 00px / 200px repeat,
 			lightgray 0% 0% / 25px 25px repeat);
@@ -117,10 +114,9 @@ a {
 
 }
 
-.alice-carousel__stage-item{
-	margin-top: 4.5rem !important;
-}
-.alice-carousel__stage-item __active __target{
-	margin-top: 4.5rem !important;
 
+@media(min-width:768px){ 
+	.alice-carousel__stage-item{
+		margin-top: 4.5rem !important;
+	}
 }

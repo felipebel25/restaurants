@@ -13,7 +13,7 @@ const STYLE = {
 	},
 
 	container: {
-		width: "max-content",
+		width: { xs: "auto", md: "max-content" },
 		height: "max-content",
 		display: "flex",
 		justifyContent: "center",
@@ -32,7 +32,7 @@ const STYLE = {
 	container_name: {
 		display: "flex",
 		flexDirection: "column",
-		ml:"1rem"
+		ml: "1rem"
 	},
 
 	img_user: {
@@ -51,7 +51,7 @@ const STYLE = {
 
 	textDescription: {
 		display: "flex",
-		width: "350px",
+		width: { xs: "auto", md: "350px" },
 		height: "auto",
 		color: "#000",
 	},

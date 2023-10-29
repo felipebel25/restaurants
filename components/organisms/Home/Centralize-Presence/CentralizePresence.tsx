@@ -1,4 +1,5 @@
 import { Box, Container } from "@mui/system"
+import { useInView } from "react-hook-inview"
 
 import { Typography } from "@mui/material"
 import { CardSocialNetworks } from "@components/atoms/Card-SocialNetworks/CardSocialNetworks"
@@ -7,10 +8,16 @@ import { homeText } from "lang/english/homeCopy"
 import { styles } from "./stylesCentralizePresence"
 
 export const CentralizePresence = () => {
+    const [ref, inView] = useInView({ unobserveOnEnter: true })
+    const validateAnimation = inView ? 'animate__animated animate__fadeIn' : ""
+
     return (
         <Box
             component="section"
-            sx={styles.main} >
+            sx={styles.main}
+            ref={ref}
+            className={validateAnimation}
+        >
             <Container
                 maxWidth="xl"
                 sx={styles.container}

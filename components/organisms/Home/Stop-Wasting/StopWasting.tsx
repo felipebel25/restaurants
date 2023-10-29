@@ -1,11 +1,19 @@
 import { Box, Container } from "@mui/system"
-import { styles } from "./stylesStopWasting"
+import { useInView } from "react-hook-inview"
 import { Button, Typography } from "@mui/material"
+
 import { homeText } from "lang/english/homeCopy"
 
+import { styles } from "./stylesStopWasting"
+
 export const StopWasting = () => {
+    const [ref, inView] = useInView({ unobserveOnEnter: true })
+    const validateAnimation = inView ? 'animate__animated animate__fadeIn animate__slow' : ""
     return (
-        <Box component="section"
+        <Box
+            className={validateAnimation}
+            ref={ref}
+            component="section"
             sx={styles.main} >
             <Container maxWidth="xl"
                 sx={styles.container}>

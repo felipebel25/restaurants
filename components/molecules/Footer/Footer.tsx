@@ -1,83 +1,45 @@
 import EatsyLogo from "@icons/EatsyLogo";
-import {
-	FacebookRounded,
-	Instagram,
-	Twitter,
-	YouTube,
-} from "@mui/icons-material";
+
 import {
 	Box,
 	Button,
 	Container,
-	IconButton,
+	InputAdornment,
 	Link,
 	Stack,
 	TextField,
 	Typography,
-	useMediaQuery,
 	useTheme,
 } from "@mui/material";
 import Views from "pages/api/Views";
 import { FunctionComponent } from "react";
+import { styles } from "./stylesFooter";
+import { EmailOutlined } from "@mui/icons-material";
 
-interface FooterProps {}
+interface FooterProps { }
 
 const Footer: FunctionComponent<FooterProps> = () => {
 	const THEME = useTheme();
 
-	const phoneView = useMediaQuery(THEME.breakpoints.down("sm"));
-	const mediumView = useMediaQuery(THEME.breakpoints.down("md"));
+
 	return (
 		<Box
 			component={"footer"}
-			className="dark-textured-bg"
-			sx={{
-				paddingTop: "5rem",
-				paddingBottom: "3.25rem",
-			}}
+			sx={styles.footer}
 		>
 			<Container>
 				<Stack
 					direction={"column"}
-					gap={"2.5rem"}
+					sx={styles.container}
 				>
 					<EatsyLogo size={"5.87rem"} />
-
 					<Stack
 						direction={"row"}
 						spacing={"2rem"}
 						justifyContent={"space-between"}
+						sx={styles.content}
 					>
-						{/* <EatsyLogo size={phoneView ? 64 : 96} />
-						<Typography
-							variant="overline"
-							color="inherit"
-						>
-							2023 - Eatsy Orders
-						</Typography> */}
-						{/* <Stack
-							direction={"row"}
-							spacing={"1.5rem"}
-						>
-							<IconButton color="inherit">
-								{" "}
-								<FacebookRounded />
-							</IconButton>
-							<IconButton color="inherit">
-								{" "}
-								<Instagram />
-							</IconButton>
-							<IconButton color="inherit">
-								{" "}
-								<Twitter />
-							</IconButton>
-							<IconButton color="inherit">
-								{" "}
-								<YouTube />
-							</IconButton>
-						</Stack> */}
-
-						<Stack spacing={"1.5rem"}>
+						<Stack spacing={"1.5rem"} sx={styles.contactSection}>
 							<Typography
 								variant="h6"
 								color="inherit"
@@ -105,8 +67,10 @@ const Footer: FunctionComponent<FooterProps> = () => {
 								</Typography>
 							</Stack>
 						</Stack>
-
-						<Stack spacing={"1.5rem"}>
+						<Stack
+							sx={styles.siteMapSection}
+							spacing={"1.5rem"}
+						>
 							<Typography
 								variant="h6"
 								color="inherit"
@@ -125,8 +89,10 @@ const Footer: FunctionComponent<FooterProps> = () => {
 								))}
 							</Stack>
 						</Stack>
-
-						<Stack spacing={"1.5rem"}>
+						<Stack
+							spacing={"1.5rem"}
+							sx={styles.legalSection}
+						>
 							<Typography
 								variant="h6"
 								color="inherit"
@@ -140,33 +106,48 @@ const Footer: FunctionComponent<FooterProps> = () => {
 								<Link color="inherit">Cookie notice</Link>
 							</Stack>
 						</Stack>
-
 						<Stack
-							spacing={"2rem"}
-							width={"23rem"}
+							sx={styles.emailSection}
 						>
 							<Stack spacing={"1rem"}>
 								<Typography
 									variant="h6"
 									color="inherit"
+									sx={styles.emailTitle}
 								>
 									Newsletter
 								</Typography>
 								<Typography
 									variant="body1"
 									color="inherit"
+									sx={styles.emailDescription}
 								>
 									Subscribe to our newsletter to get your weekly dose of news
 									updates, tips and special offers.
 								</Typography>
 							</Stack>
-							<Stack spacing={"1rem"}>
+							<Stack
+								spacing={"1rem"}
+							>
 								<TextField
 									prefix="sd"
 									variant="outlined"
 									label="Email"
+									InputLabelProps={{
+										sx: { color: "white" }
+									}}
+									color="primary"
+									placeholder="Enter your email address"
+									sx={styles.input}
+									InputProps={{
+										sx: { color: "white !important" },
+										startAdornment: (
+											<InputAdornment position="start">
+												<EmailOutlined sx={{ fill: "white" }} />
+											</InputAdornment>
+										),
+									}}
 								/>
-
 								<Button
 									color={"secondary"}
 									size={"small"}

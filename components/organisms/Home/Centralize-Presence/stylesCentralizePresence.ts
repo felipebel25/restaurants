@@ -7,11 +7,15 @@ export const styles = {
         height: "100%",
     },
     sectionText: {
-        width: "600px",
-        margin: "0 auto"
+        width: { xs: "100%", md: "600px" },
+        margin: "0 auto",
+        textAlign: { xs: "center", md: "left" },
+        marginBottom: { xs: "1rem", }
     },
     title: {
         mb: "1rem",
-        textAlign: "center"
+        textAlign: "center",
+        fontWeight: { xs: 600, md: 400 },
+
     }
 }
