@@ -1,13 +1,17 @@
-import { Fragment, ReactElement } from "react";
+import { ReactElement } from "react";
 import MainLayout from "@components/templates/MainLayout/MainLayout";
 import { NextPageWithLayout } from "./_app";
 import { SolutionsContent } from "@components/organisms/Solutions/Solutions";
+import Head from "next/head";
 
 const Solutions: NextPageWithLayout = () => {
 	return (
-		<Fragment>
+		<>
+			<Head>
+				<title>Solutions  | Eatsy</title>
+			</Head>
 			<SolutionsContent />
-		</Fragment>
+		</>
 	);
 }; //Closes Home page
 

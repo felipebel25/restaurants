@@ -1,23 +1,25 @@
 import React, { FunctionComponent } from "react";
 
-import STYLE from "./style";
 
 import { Box, Container, Stack, Typography } from "@mui/material";
 import { solutionsText } from "lang/english/solutionsCopy";
 import CardDescription from "@components/atoms/Cards/CardDescription/CardDescription";
-import Star from "public/componets/Star";
-import Group from "public/componets/Group";
-import Alert from "public/componets/Alert";
 
 import CardDescriptionGroup from "@components/atoms/Cards/CardDescriptionGroup/CardDescriptionGroup";
 
 import { SlideGroupSelection } from "@components/molecules/SlideGroupSelection/SlideGroupSelection";
-import { features } from "process";
+// components
+import { FirstSlidePortrait } from "./FirstSlidePortrait/FirstSlidePortrait";
 
-interface SolutionsContentProps {}
+import { KeyFeatures } from "./KeyFeatures/KeyFeatures";
+import { SecondSlidePortrait } from "./SeconSlidePortrait/SecondSlidePortrait";
+import { ElevateYourRest } from "./ElevateYour/ElevateYourRest";
+
+import STYLE from "./style";
+interface SolutionsContentProps { }
 
 export const SolutionsContent: FunctionComponent =
-	({}: SolutionsContentProps) => {
+	({ }: SolutionsContentProps) => {
 		return (
 			<Box sx={STYLE.main}>
 				<Container maxWidth="xl">
@@ -36,8 +38,13 @@ export const SolutionsContent: FunctionComponent =
 								{solutionsText.Hero.subTitle}
 							</Typography>
 						</Stack>
+						<FirstSlidePortrait />
+						<KeyFeatures />
+						<SecondSlidePortrait />
+						<ElevateYourRest />
 
-						<SlideGroupSelection slides={solutionsText.Departments} />
+
+						{/* <SlideGroupSelection slides={solutionsText.Departments} />
 
 						<CardDescriptionGroup color="linear-gradient(150deg, rgba(250, 200, 68, 0.28) 0%, rgba(250, 200, 68, 0.08) 100%)">
 							{solutionsText.DepartmentsFeatures.map((feature, index) => (
@@ -62,7 +69,7 @@ export const SolutionsContent: FunctionComponent =
 									icon={feature.icon}
 								/>
 							))}
-						</CardDescriptionGroup>
+						</CardDescriptionGroup> */}
 					</Stack>
 				</Container>
 			</Box>
