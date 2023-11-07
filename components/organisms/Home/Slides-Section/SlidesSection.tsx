@@ -78,7 +78,7 @@ const items = [
                 src={homeText.SlidesSection.card[2].image}
                 width={336}
                 height={510}
-                widthMobile={250}
+                widthMobile={200}
                 heightMobile={363}
                 customStyle={{ position: "relative", top: "-5.7rem" }}
             />

@@ -28,8 +28,8 @@ export const ResponsiveImage = ({
         <Image
             src={src}
             alt={alt}
-            width={phoneView ? widthMobile : width}
-            height={phoneView ? heightMobile : height}
+            width={phoneView && widthMobile ? widthMobile : width}
+            height={phoneView && heightMobile ? heightMobile : height}
             quality={quality}
             style={customStyle}
 
