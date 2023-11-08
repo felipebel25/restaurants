@@ -53,7 +53,17 @@ export const FirstSlidePortrait = () => {
                 </Box>
             </Box >
             <Box sx={styles.sectionVideos}>
+                <video
+                    autoPlay
+                    loop
+                    style={{ width: "45%" }}
+                    muted
+                    playsInline={true}
+                    controls={false}
+                    src="/videos/solutions.mp4"
+                />
                 <Button
+                    sx={styles.button}
                     variant="contained"
                 >Start Now</Button>
             </Box>

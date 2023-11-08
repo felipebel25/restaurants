@@ -22,7 +22,9 @@ export const SolutionsContent: FunctionComponent =
 	({ }: SolutionsContentProps) => {
 		return (
 			<Box sx={STYLE.main}>
-				<Container maxWidth="xl">
+				<Container maxWidth="xl"
+				
+				>
 					<Stack
 						alignItems={"center"}
 						spacing={"7rem"}
@@ -32,6 +34,7 @@ export const SolutionsContent: FunctionComponent =
 							maxWidth="sm"
 							alignItems={"center"}
 							textAlign={"center"}
+						
 						>
 							<Typography variant="h2">{solutionsText.Hero.title}</Typography>
 							<Typography variant="body1">
@@ -42,34 +45,6 @@ export const SolutionsContent: FunctionComponent =
 						<KeyFeatures />
 						<SecondSlidePortrait />
 						<ElevateYourRest />
-
-
-						{/* <SlideGroupSelection slides={solutionsText.Departments} />
-
-						<CardDescriptionGroup color="linear-gradient(150deg, rgba(250, 200, 68, 0.28) 0%, rgba(250, 200, 68, 0.08) 100%)">
-							{solutionsText.DepartmentsFeatures.map((feature, index) => (
-								<CardDescription
-									key={index}
-									title={feature.title}
-									text={feature.body}
-									icon={feature.icon}
-								/>
-							))}
-						</CardDescriptionGroup>
-
-						<SlideGroupSelection slides={solutionsText.UseCases} />
-
-						<CardDescriptionGroup color="linear-gradient(325deg, rgba(174, 255, 239, 0.00) 0%, rgba(174, 255, 239, 0.16) 0.01%, rgba(174, 255, 239, 0.50) 93.27%)">
-							{solutionsText.UseCasesFeatures.map((feature, index) => (
-								<CardDescription
-									iconColor="secondary"
-									key={index}
-									title={feature.title}
-									text={feature.body}
-									icon={feature.icon}
-								/>
-							))}
-						</CardDescriptionGroup> */}
 					</Stack>
 				</Container>
 			</Box>

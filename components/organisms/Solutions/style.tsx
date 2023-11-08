@@ -5,7 +5,7 @@ const STYLE = {
     minHeigth: "100vh",
     heigth: "max-content",
     display: "flex",
-    backgroundColor: 'black.main',
+    backgroundColor: '#000000',
     paddingY: "6rem",
   },
 

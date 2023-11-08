@@ -2,7 +2,7 @@ export const styles = {
     main: {
         display: "flex",
         width: "100%",
-        height: "500px"
+        height: "500px",
     },
     sectionSlides: {
         width: "50%",
@@ -43,5 +43,8 @@ export const styles = {
     },
     titleSlide: {
         fontSize: "2.2rem"
+    },
+    button: {
+        mt: "2rem"
     }
 }
