@@ -1,0 +1,30 @@
+trigger:
+- develop
+- master 
+pool:
+  name: EatsyOrders
+  
+jobs:
+    - job: Amplify_Deployment
+      displayName: "Amplify Deployment"
+      workspace:
+        clean: all
+      steps:
+      - checkout: none
+      - script: |
+          cd $(Agent.TempDirectory)
+          echo ${AZURE_BRANCH}
+          git clone --bare https://${AZURE_DEVOPS_EXT_PAT}@dev.azure.com/SamGreenCorporation/IT%20-%20DevSquad/_git/$(Build.Repository.Name) --single-branch --branch $(Build.SourceBranchName) aws
+          cd aws
+          git remote add aws https://git-codecommit.${AWS_REGION}.amazonaws.com/v1/repos/$(Build.Repository.Name)
+          git config credential.helper '!aws codecommit credential-helper $@'
+          git config credential.UseHttpPath true
+          git push aws $(Build.SourceBranchName)
+            
+        displayName: 'Sync CodeCommit Repo'
+
+        env:
+          AZURE_DEVOPS_EXT_PAT: $(System.AccessToken)
+          AWS_REGION: $(AWS_REGION)
+          AWS_ACCESS_KEY_ID: $(_AWS_ACCESS_KEY_ID)
+          AWS_SECRET_ACCESS_KEY: $(_AWS_SECRET_ACCESS_KEY)
